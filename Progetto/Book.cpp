@@ -1,9 +1,19 @@
 #include "Book.h"
 
-//Book::Book()
-//{
-//}
-//
+Book(	
+std::string name, std::string surname, 
+		std::string book_title, 
+		std::string isbn, 
+		Date copyright, 
+		bool availability_status)
+		{
+			Isbn isbn_code(isbn);
+			title = book_title;
+			auth_name = name;
+			auth_surname = surname;
+			copyright_date = copyright;
+			availability = status;
+		}
 //Book::~Book()
 //{
 //}

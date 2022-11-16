@@ -10,7 +10,13 @@ public:
 		
 	// COSTRUTTORI
 	// con tutti i parametri
-	
+	// 
+	// Book my_favourite_book(“David”, “Foster Wallace”, “Una cosa divertente che non farò mai più”, “887-521-837-4”);
+	Book(	std::string name, std::string surname, 
+			std::string book_title, 
+			std::string isbn, 
+			Date copyright, 
+			bool availability_status = true);	// argomento di default, per ora metto solo questo ma dobbiamo pensare agli altri
 	
 	// getters
 	std::string get_isbn();			// possiamo far uscire Isbn? secondo me no
@@ -52,7 +58,7 @@ private:
 	std::string title;
 	std::string auth_name;
 	std::string auth_surname;
-	Date copyright;
+	Date copyright_date;
 	bool availability;
 	
 	
