@@ -5,19 +5,20 @@
 ## Debug
 ProjectName            :=Progettino
 ConfigurationName      :=Debug
-WorkspaceConfiguration := $(ConfigurationName)
-WorkspacePath          :=/home/hulk/2/fr2032442/Workspace
-ProjectPath            :=/home/hulk/2/fr2032442/Workspace/Progettino
-IntermediateDirectory  :=../build-$(ConfigurationName)/Progettino
-OutDir                 :=../build-$(ConfigurationName)/Progettino
+WorkspaceConfiguration :=Debug
+WorkspacePath          :=C:/Users/franc/Desktop/ProgettoIntermedio
+ProjectPath            :=C:/Users/franc/Desktop/ProgettoIntermedio/Progetto
+IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/Progetto
+OutDir                 :=$(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=FRANCESCO RONCOLATO
-Date                   :=16/11/22
-CodeLitePath           :=/home/hulk/2/fr2032442/.codelite
-LinkerName             :=/usr/bin/g++
-SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
+User                   :=Francesco
+Date                   :=11/16/2022
+CodeLitePath           :="C:/Program Files/CodeLite"
+MakeDirCommand         :=mkdir
+LinkerName             :="C:/Program Files/mingw64/bin/g++.exe"
+SharedObjectLinkerName :="C:/Program Files/mingw64/bin/g++.exe" -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
 PreprocessSuffix       :=.i
@@ -28,13 +29,16 @@ OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-OutputFile             :=../build-$(ConfigurationName)/bin/$(ProjectName)
+OutputDirectory        :=C:/Users/franc/Desktop/ProgettoIntermedio/build-$(WorkspaceConfiguration)/bin
+OutputFile             :=..\build-$(WorkspaceConfiguration)\bin\$(ProjectName)
 Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
 ObjectsFileList        :=$(IntermediateDirectory)/ObjectsList.txt
 PCHCompileFlags        :=
+RcCmpOptions           := 
+RcCompilerName         :="C:/Program Files/mingw64/bin/windres.exe"
 LinkOptions            :=  
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
@@ -45,22 +49,22 @@ LibPath                := $(LibraryPathSwitch).
 
 ##
 ## Common variables
-## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
+## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overridden using an environment variable
 ##
-AR       := /usr/bin/ar rcu
-CXX      := /usr/bin/g++
-CC       := /usr/bin/gcc
+AR       := "C:/Program Files/mingw64/bin/ar.exe" rcu
+CXX      := "C:/Program Files/mingw64/bin/g++.exe"
+CC       := "C:/Program Files/mingw64/bin/gcc.exe"
 CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
 CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 ASFLAGS  := 
-AS       := /usr/bin/as
+AS       := "C:/Program Files/mingw64/bin/as.exe"
 
 
 ##
 ## User defined environment variables
 ##
-CodeLiteDir:=/usr/share/codelite
-Objects0=../build-$(ConfigurationName)/Progettino/Date.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Progettino/tester.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Progettino/Book.cpp$(ObjectSuffix) 
+CodeLiteDir:=C:\Program Files\CodeLite
+Objects0=$(IntermediateDirectory)/Date.cpp$(ObjectSuffix) $(IntermediateDirectory)/Book.cpp$(ObjectSuffix) $(IntermediateDirectory)/tester.cpp$(ObjectSuffix) 
 
 
 
@@ -72,18 +76,18 @@ Objects=$(Objects0)
 .PHONY: all clean PreBuild PrePreBuild PostBuild MakeIntermediateDirs
 all: MakeIntermediateDirs $(OutputFile)
 
-$(OutputFile): ../build-$(ConfigurationName)/Progettino/.d $(Objects) 
-	@mkdir -p "../build-$(ConfigurationName)/Progettino"
+$(OutputFile): $(IntermediateDirectory)/.d $(Objects) 
+	@if not exist "$(IntermediateDirectory)" $(MakeDirCommand) "$(IntermediateDirectory)"
 	@echo "" > $(IntermediateDirectory)/.d
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
 
 MakeIntermediateDirs:
-	@mkdir -p "../build-$(ConfigurationName)/Progettino"
-	@mkdir -p ""../build-$(ConfigurationName)/bin""
+	@if not exist "$(IntermediateDirectory)" $(MakeDirCommand) "$(IntermediateDirectory)"
+	@if not exist "$(OutputDirectory)" $(MakeDirCommand) "$(OutputDirectory)"
 
-../build-$(ConfigurationName)/Progettino/.d:
-	@mkdir -p "../build-$(ConfigurationName)/Progettino"
+$(IntermediateDirectory)/.d:
+	@if not exist "$(IntermediateDirectory)" $(MakeDirCommand) "$(IntermediateDirectory)"
 
 PreBuild:
 
@@ -91,32 +95,32 @@ PreBuild:
 ##
 ## Objects
 ##
-../build-$(ConfigurationName)/Progettino/Date.cpp$(ObjectSuffix): Date.cpp ../build-$(ConfigurationName)/Progettino/Date.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/hulk/2/fr2032442/Workspace/Progettino/Date.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Date.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/Progettino/Date.cpp$(DependSuffix): Date.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/Progettino/Date.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/Progettino/Date.cpp$(DependSuffix) -MM Date.cpp
+$(IntermediateDirectory)/Date.cpp$(ObjectSuffix): Date.cpp $(IntermediateDirectory)/Date.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/franc/Desktop/ProgettoIntermedio/Progetto/Date.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Date.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Date.cpp$(DependSuffix): Date.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Date.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Date.cpp$(DependSuffix) -MM Date.cpp
 
-../build-$(ConfigurationName)/Progettino/Date.cpp$(PreprocessSuffix): Date.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/Progettino/Date.cpp$(PreprocessSuffix) Date.cpp
+$(IntermediateDirectory)/Date.cpp$(PreprocessSuffix): Date.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Date.cpp$(PreprocessSuffix) Date.cpp
 
-../build-$(ConfigurationName)/Progettino/tester.cpp$(ObjectSuffix): tester.cpp ../build-$(ConfigurationName)/Progettino/tester.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/hulk/2/fr2032442/Workspace/Progettino/tester.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/tester.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/Progettino/tester.cpp$(DependSuffix): tester.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/Progettino/tester.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/Progettino/tester.cpp$(DependSuffix) -MM tester.cpp
+$(IntermediateDirectory)/Book.cpp$(ObjectSuffix): Book.cpp $(IntermediateDirectory)/Book.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/franc/Desktop/ProgettoIntermedio/Progetto/Book.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Book.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Book.cpp$(DependSuffix): Book.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Book.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Book.cpp$(DependSuffix) -MM Book.cpp
 
-../build-$(ConfigurationName)/Progettino/tester.cpp$(PreprocessSuffix): tester.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/Progettino/tester.cpp$(PreprocessSuffix) tester.cpp
+$(IntermediateDirectory)/Book.cpp$(PreprocessSuffix): Book.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Book.cpp$(PreprocessSuffix) Book.cpp
 
-../build-$(ConfigurationName)/Progettino/Book.cpp$(ObjectSuffix): Book.cpp ../build-$(ConfigurationName)/Progettino/Book.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/hulk/2/fr2032442/Workspace/Progettino/Book.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Book.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/Progettino/Book.cpp$(DependSuffix): Book.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/Progettino/Book.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/Progettino/Book.cpp$(DependSuffix) -MM Book.cpp
+$(IntermediateDirectory)/tester.cpp$(ObjectSuffix): tester.cpp $(IntermediateDirectory)/tester.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/franc/Desktop/ProgettoIntermedio/Progetto/tester.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/tester.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/tester.cpp$(DependSuffix): tester.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/tester.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/tester.cpp$(DependSuffix) -MM tester.cpp
 
-../build-$(ConfigurationName)/Progettino/Book.cpp$(PreprocessSuffix): Book.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/Progettino/Book.cpp$(PreprocessSuffix) Book.cpp
+$(IntermediateDirectory)/tester.cpp$(PreprocessSuffix): tester.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/tester.cpp$(PreprocessSuffix) tester.cpp
 
 
--include ../build-$(ConfigurationName)/Progettino//*$(DependSuffix)
+-include $(IntermediateDirectory)/*$(DependSuffix)
 ##
 ## Clean
 ##
