@@ -1,0 +1,7 @@
+-I/usr/include/c++/11
+-I/usr/include/c++/11/x86_64-redhat-linux
+-I/usr/include/c++/11/backward
+-I/usr/lib/gcc/x86_64-redhat-linux/11/include
+-I/usr/local/include
+-I/usr/include
+-I/home/hulk/2/fr2032442/Workspace/Progettino
