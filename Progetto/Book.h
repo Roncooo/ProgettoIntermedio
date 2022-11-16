@@ -13,6 +13,12 @@ public:
 	
 	
 	// getters
+	std::string get_isbn();			// possiamo far uscire Isbn? secondo me no
+	std::string get_auth_name();
+	std::string get_auth_surname();
+	std::strign get_title();
+	Date get_copyright();
+	bool is_available();
 
 	// cambiano lo stato di is_available se ha senso
 	void borrow_book(); 	// throws ImpossibleToBorrowUnvailableBook
@@ -36,6 +42,7 @@ private:
 		std::string isbn_code;
 		
 		// è giusto dichiararla qui? o meglio fuori da isbn?
+		// e perché non struct?
 		class InvalidIsbnException{};
 	};
 	
@@ -47,6 +54,12 @@ private:
 	std::string auth_surname;
 	Date copyright;
 	bool availability;
+	
+	
+	// eccezioni di Book, le mettiamo struct?
+	class ImpossibleToBorrowUnvailableBook{};
+	class ImpossibleToReturnAvailableBook{};
+	
 	
 };
 

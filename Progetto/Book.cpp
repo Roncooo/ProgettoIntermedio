@@ -8,6 +8,24 @@
 //{
 //}
 
+
+// cambiano lo stato di is_available se ha senso
+void Book::borrow_book()
+{
+	if(this->is_available())
+		availability = false;
+	else
+		throw ImpossibleToBorrowUnvailableBook();
+}
+void Book::return_book()
+{
+	if(!(this->is_available()))
+		availability = true;
+	else
+		throw ImpossibleToReturnAvailableBook();
+}
+
+
 // costruttore, throws Invalid ISBN code
 Book::Isbn::Isbn(std::string code)
 {
