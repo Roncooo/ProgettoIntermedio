@@ -1,0 +1,1 @@
+../build-Debug/Progetto/Date.cpp.o ../build-Debug/Progetto/Book.cpp.o ../build-Debug/Progetto/tester.cpp.o   

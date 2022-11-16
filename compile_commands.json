@@ -1,0 +1,21 @@
+[{
+  "file": "C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\Date.cpp",
+  "directory": "C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto",
+  "command": "\"\"C:/Program Files/mingw64/bin/g++.exe\"\" -c C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\Date.cpp -o C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\Date.cpp.o  -I. -I.  -g  -O0  -Wall"
+ }, {
+  "file": "C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\Book.cpp",
+  "directory": "C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto",
+  "command": "\"\"C:/Program Files/mingw64/bin/g++.exe\"\" -c C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\Book.cpp -o C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\Book.cpp.o  -I. -I.  -g  -O0  -Wall"
+ }, {
+  "file": "C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\tester.cpp",
+  "directory": "C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto",
+  "command": "\"\"C:/Program Files/mingw64/bin/g++.exe\"\" -c C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\tester.cpp -o C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\tester.cpp.o  -I. -I.  -g  -O0  -Wall"
+ }, {
+  "file": "C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\Book.h",
+  "directory": "C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto",
+  "command": "\"\"C:/Program Files/mingw64/bin/g++.exe\"\" -c C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\Book.h -o C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\Book.h.o  -I. -I.  -g  -O0  -Wall"
+ }, {
+  "file": "C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\Date.h",
+  "directory": "C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto",
+  "command": "\"\"C:/Program Files/mingw64/bin/g++.exe\"\" -c C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\Date.h -o C:\\Users\\franc\\Desktop\\ProgettoIntermedio\\Progetto\\Date.h.o  -I. -I.  -g  -O0  -Wall"
+ }]
