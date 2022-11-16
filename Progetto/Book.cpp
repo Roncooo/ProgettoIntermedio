@@ -33,7 +33,7 @@ bool Book::Isbn::is_valid_isbn(std::string s)
 			return false;
 	}
 	
-	if( s[3]!=dlm || s[3+4]!=dlm || s[3+4]!=dlm )
+	if( s[3]!=dlm || s[3+4]!=dlm || s[3+8]!=dlm )
 		return false;
 	
 	char x = s[12];
