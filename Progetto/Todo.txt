@@ -1,0 +1,9 @@
+Robe da fare/controllare/capire se vanno fatte (per ogni classe)
+	Explicit: evita conversioni implicite (stare attenti nei costruttori con argomenti di default)
+	Costruttore con uno o più argomenti
+	Costruttore di default
+	Costruttore di copia
+	Assegnamento di copia
+	Costruttore di spostamento
+	Assegnamento di spostamento
+	Distruttore
