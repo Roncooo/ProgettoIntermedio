@@ -36,7 +36,7 @@ bool Date::check_february()
     return true;
 }
 
-std::ostream& operator<<(std::ostream& os, Date d)
+std::ostream& Date::operator<<(std::ostream& os, Date d)
 {
     return os<<d.get_day()<<"/ "<<d.get_month()<<"/ "<<d.get_year()<<"\n"; 
 }
