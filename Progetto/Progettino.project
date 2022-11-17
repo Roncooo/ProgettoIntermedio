@@ -3,6 +3,7 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <File Name="Todo.txt"/>
     <File Name="Month.h"/>
     <File Name="Date.h"/>
     <File Name="Book.h"/>
