@@ -1,5 +1,13 @@
 #include "Date.h"
-
+// secondo me è meglio fare una funzione bool is_valid_date(int d, int m, int y) pubblica, così l'utente può usarla per evitare di creare date che lanciano eccezioni
+// dentro is_valid_date
+    // controllo generico dei dati 0<mese<=12, 0<giorno<=31 
+    // 0<=anno<=2023 (?? è una scelta, per me ci sta)
+    // controllo dei giorni del mese (che delegherei ad un'altra funzione magari check_month_days(gg,mm) helper)
+        // se il mese è gennaio devo avere il giorno <=31
+        // se il mese è febbraio devo invocare anche is_leap_year(yyyy)
+        // se il mese è marzo ... tutte queste if magari con una switch
+// nel costruttore if(!is_valid_date) throw new InvalidDateException();
 
 Date::Date(int d = 1, Month m = jan, int y = 2000):day{d}, mon{m}, year{y}
 {
@@ -8,7 +16,8 @@ Date::Date(int d = 1, Month m = jan, int y = 2000):day{d}, mon{m}, year{y}
     
 }
 
-bool Date::is_bisestile()
+// io la metterei helper function che prende un intero
+bool Date::is_leap_year()
 {
     if((this->year % 100 == 0) && (this->year % 400 == 0)) //se un anno è divisibile per 100 e per 400 è bisestile
         return true;
@@ -17,8 +26,7 @@ bool Date::is_bisestile()
     return false;
 }
 
-bool Date::check_february() // non è meglio un check_days_of_month che controlla per esempio che per gennaio ci siano <= 31 giorni, per febbraio i controlli del caso, etc...?
-//reply to francesco: ha senso ma allora i giorni minori di 31 li controllo nel costruttore no? e per i mesi di 30 giorni?
+bool Date::check_february()
 {
     if((this->mon == feb) && this->is_bisestile())
     {
