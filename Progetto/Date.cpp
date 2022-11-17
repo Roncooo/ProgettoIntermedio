@@ -17,7 +17,7 @@ bool Date::is_bisestile()
     return false;
 }
 
-bool Date::check_february()
+bool Date::check_february() // non è meglio un check_days_of_month che controlla per esempio che per gennaio ci siano <= 31 giorni, per febbraio i controlli del caso, etc...?
 {
     if((this->mon == feb) && this->is_bisestile())
     {
