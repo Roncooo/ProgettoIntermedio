@@ -11,21 +11,26 @@ private:
     int year;
     Month mon;
     
+    static constexpr int max_day_feb = 29; //il 29 febbraio mi servirà per il check sul mese febbraio
     struct InvalidYearException{};
+    struct FebruaryException{};
     
 public:
     
-    //costruttore, che comprende anche il costruttore di default
+    //costruttore, che comprende anche il costruttore di default, throws InvalidYearException() se l'anno è negativo
     //se non specificati i parametri, creo la data "1 Gennaio 2000", vedi file.cpp (è più corretto settarli nel file header?)
     Date(int d, Month m, int y);
     
-    //l'anno è bisestile? un anno è bisestile se 1) è divisibile per 4 2)un anno divisibile per 100 è bisestile se divisibile per 400
+    //funzioni getter
+    int get_day() const { return day; }
+    Month get_month() const { return mon; }
+    int get_year() { return year; }
+    
+    //controllo se l'anno è bisestile
     bool is_bisestile();
     
-    
-    
-    
-    ~Date();
+    //funzione check febbraio throws FebruaryException()
+    bool check_february();
 
 };
 

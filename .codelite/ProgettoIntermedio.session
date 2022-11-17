@@ -1,41 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="C:\Users\franc\Desktop\ProgettoIntermedio\ProgettoIntermedio.workspace">
-  <int Value="0" Name="m_selectedTab"/>
-  <wxString Value="C:\Users\franc\Desktop\ProgettoIntermedio\ProgettoIntermedio.workspace" Name="m_workspaceName"/>
+<Session Name="C:\Users\Beatrice\OneDrive\Desktop\Progetto Intermedio\ProgettoIntermedio.workspace">
+  <int Value="1" Name="m_selectedTab"/>
+  <wxString Value="C:\Users\Beatrice\OneDrive\Desktop\Progetto Intermedio\ProgettoIntermedio.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\Users\franc\Desktop\ProgettoIntermedio\Progetto\Book.cpp" Name="FileName"/>
-      <int Value="14" Name="FirstVisibleLine"/>
-      <int Value="31" Name="CurrentLine"/>
+      <wxString Value="C:\Users\Beatrice\OneDrive\Desktop\Progetto Intermedio\Progetto\Date.h" Name="FileName"/>
+      <int Value="5" Name="FirstVisibleLine"/>
+      <int Value="21" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\Users\franc\Desktop\ProgettoIntermedio\Progetto\Book.h" Name="FileName"/>
-      <int Value="25" Name="FirstVisibleLine"/>
-      <int Value="37" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\franc\Desktop\ProgettoIntermedio\Progetto\Date.cpp" Name="FileName"/>
+      <wxString Value="C:\Users\Beatrice\OneDrive\Desktop\Progetto Intermedio\Progetto\Date.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\franc\Desktop\ProgettoIntermedio\Progetto\Date.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\franc\Desktop\ProgettoIntermedio\Progetto\tester.cpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
+      <int Value="13" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks">
+        <wxString Value="15:3"/>
+      </wxArrayString>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
   </TabInfoArray>

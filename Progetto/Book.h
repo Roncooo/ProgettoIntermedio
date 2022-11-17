@@ -22,7 +22,7 @@ public:
 	std::string get_isbn();			// possiamo far uscire Isbn? secondo me no
 	std::string get_auth_name();
 	std::string get_auth_surname();
-	std::strign get_title();
+	std::string get_title();
 	Date get_copyright();
 	bool is_available();
 

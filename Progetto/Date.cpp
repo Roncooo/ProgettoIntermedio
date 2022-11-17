@@ -10,12 +10,22 @@ Date::Date(int d = 1, Month m = jan, int y = 2000):day{d}, mon{m}, year{y}
 
 bool Date::is_bisestile()
 {
+    if((this->year % 100 == 0) && this->year % 400 == 0)) //se un anno è divisibile per 100 e per 400 è bisestile
+        return true;
+    else if(this->year % 4 == 0) //se un anno è divisibile per 4 è bisestile
+        return true;
     return false;
 }
 
-
-
-Date::~Date()
+bool Date::check_february()
 {
+    if((this->mon == feb) && (is_bisestile(this->year)))
+    {
+        if(this->day > max_day_feb)
+            throw new FebruaryException();
+    }
+    return true;
 }
+
+
 
