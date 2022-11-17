@@ -30,7 +30,7 @@ bool Date::check_february() // non è meglio un check_days_of_month che controll
 
 std::ostream& operator<<(std::ostream& os, Date d)
 {
-    return os<<d.get_day()<<", "<<d.get_month()<<", "<<d.get_year()<<"\n"; 
+    return os<<d.get_day()<<"/ "<<d.get_month()<<"/ "<<d.get_year()<<"\n"; 
 }
 
 
