@@ -1,6 +1,7 @@
 #ifndef DATE_H
 #define DATE_H
 #include "Month.h"
+#include <iostream>
 
 class Date
 {
@@ -33,5 +34,7 @@ public:
     bool check_february();
 
 };
+
+std::ostream& operator<<(std::ostream& os, Date d);
 
 #endif // DATE_H

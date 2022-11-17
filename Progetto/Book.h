@@ -17,7 +17,7 @@ public:
 			std::string isbn, 
 			Date copyright, 
 			bool availability_status = true);	// argomento di default, per ora metto solo questo ma dobbiamo pensare agli altri
-	
+                                                //è availibility non availability_status(?)
 	// getters
 	std::string get_isbn();			// possiamo far uscire Isbn? secondo me no
 	std::string get_auth_name();
