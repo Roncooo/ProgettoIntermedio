@@ -10,7 +10,11 @@ Book(
 	bool availability_status
     )
 	{
-		Isbn isbn_code(isbn);
+		if(is_valid_isbn(isbn))
+			isbn_code = isbn;
+		else
+			throw InvalidIsbnException();
+	
 		title = book_title;
 		auth_name = name;
 		auth_surname = surname;
@@ -21,6 +25,13 @@ Book(
 //{
 //}
 
+// getters
+std::string Book::get_isbn() { return isbn_code; }
+std::string Book::get_auth_name() { return auth_name; }
+std::string Book::get_auth_surname() { return auth_surname; }
+std::string Book::get_title() { return title; }
+Date Book::get_copyright() { return copyright_date; }
+bool Book::is_available() { return availability; }
 
 // cambiano lo stato di is_available se ha senso
 void Book::borrow_book()
@@ -38,20 +49,10 @@ void Book::return_book()
 		throw ImpossibleToReturnAvailableBook();
 }
 
-
-// costruttore, throws Invalid ISBN code
-Book::Isbn::Isbn(std::string code)
-{
-	if(is_valid_isbn(code))
-		isbn_code = code;
-	else
-		throw InvalidIsbnException();
-} 
-	
 // nnn-nnn-nnn-x
 // x lettera o numero ma non carattere speciale
 // ci sono un po' di maginumbers, dite che va bene lo stesso?
-bool Book::Isbn::is_valid_isbn(std::string s)
+bool Book::is_valid_isbn(std::string s)
 {
 	char dlm = '-';
 	
@@ -68,6 +69,7 @@ bool Book::Isbn::is_valid_isbn(std::string s)
 		return false;
 	
 	char x = s[12];
+	// controllo il numero progressivo del carattere nella tabella ascii
 	if( 
 		!(x>=48 && x<=57) && // x is not a number digit
 		!(x>=65 && x<=90) && // x is not a capital letter
