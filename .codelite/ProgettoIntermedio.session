@@ -5,17 +5,17 @@
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="C:\Users\Beatrice\OneDrive\Desktop\Progetto Intermedio\Progetto\Date.h" Name="FileName"/>
-      <int Value="12" Name="FirstVisibleLine"/>
-      <int Value="32" Name="CurrentLine"/>
+      <int Value="15" Name="FirstVisibleLine"/>
+      <int Value="4" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\Beatrice\OneDrive\Desktop\Progetto Intermedio\Progetto\Date.cpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="6" Name="FirstVisibleLine"/>
+      <int Value="20" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks">
-        <wxString Value="29:3"/>
+        <wxString Value="34:3"/>
       </wxArrayString>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

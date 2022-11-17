@@ -1,3 +1,2 @@
-../build-Debug/Progetto/Date.cpp.o: Date.cpp Date.h Month.h
+../build-Debug/Progetto/Date.cpp.o: Date.cpp Date.h
 Date.h:
-Month.h:
