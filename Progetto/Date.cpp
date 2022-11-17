@@ -18,6 +18,7 @@ bool Date::is_bisestile()
 }
 
 bool Date::check_february() // non è meglio un check_days_of_month che controlla per esempio che per gennaio ci siano <= 31 giorni, per febbraio i controlli del caso, etc...?
+//reply to francesco: ha senso ma allora i giorni minori di 31 li controllo nel costruttore no? e per i mesi di 30 giorni?
 {
     if((this->mon == feb) && this->is_bisestile())
     {
