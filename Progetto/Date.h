@@ -1,6 +1,6 @@
 #ifndef DATE_H
 #define DATE_H
-#include "Month.h"
+#include "Month.h"  // la lasciamo esterna?
 #include <iostream>
 
 class Date
