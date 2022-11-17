@@ -28,7 +28,7 @@ public:
     int get_year() { return year; }
     
     //controllo se l'anno è bisestile
-    bool is_bisestile();
+    bool is_leap_year();
     
     //funzione check febbraio throws FebruaryException()
     bool check_february();
