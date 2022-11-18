@@ -32,9 +32,9 @@ Book::Book(const Book& b)
 	:
 		isbn_code {b.isbn_code},
 		title {b.title},
-		auth_name {b.name},
+		auth_name {b.auth_name},
 		auth_surname {b.auth_surname},
-		copyright_date {b.copyright_date}
+		copyright_date {b.copyright_date},
 		availability {b.availability}
 	{
 	}
@@ -44,9 +44,9 @@ Book::Book(Book&& b)
 	:
 		isbn_code {b.isbn_code},
 		title {b.title},
-		auth_name {b.name},
+		auth_name {b.auth_name},
 		auth_surname {b.auth_surname},
-		copyright_date {b.copyright_date}
+		copyright_date {b.copyright_date},
 		availability {b.availability}
 	{
 		b.isbn_code = Isbn("000-000-000-x");

@@ -36,7 +36,9 @@ public:
 	void borrow_book(); 	// throws ImpossibleToBorrowUnvailableBook
 	void return_book();		// throws ImpossibleToReturnAvailableBook
 		
-		
+	// assegnamenti
+	Book& operator= (const Book& b);
+	Book& operator= (Book&& b);
 
 // Ghidoni in Rational non mette il distruttore	
 //	~Book();
@@ -78,6 +80,7 @@ std::string default_string = "Not_specified";
 // Ghidoni le ha messe fuori
 bool operator==(Book b, Book c);
 bool operator!=(Book b, Book c);
-std::ostream& operator<<(std::ostream& os, Book b); 
+std::ostream& operator<<(std::ostream& os, Book b);
+
 
 #endif // BOOK_HPP
