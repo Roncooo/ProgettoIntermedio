@@ -17,7 +17,7 @@ public:
 		std::string surname = default_string, 
 		std::string book_title = default_string, 
 		std::string isbn = "000-000-000-x", 
-		Date copyright, // teoricamente basta a chiamare il costruttore di default di date 
+		Date copyright = Date(), // teoricamente basta a chiamare il costruttore di default di date 
 		bool availability_status = true);	// argomento di default, per ora metto solo questo ma dobbiamo pensare agli altri
     
 	Book (const Book& b);
@@ -73,6 +73,7 @@ private:
 	class ImpossibleToBorrowUnvailableBook{};
 	class ImpossibleToReturnAvailableBook{};
 	
+	// variabili statiche
 	static std::string default_string;
 };
 std::string default_string = "Not_specified";

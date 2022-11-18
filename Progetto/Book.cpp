@@ -3,6 +3,8 @@
 // è brutto secondo voi mettere i parametri così?
 //non è bellissimo, ma è più chiaro e l'ho visto fare anche a giulio lol
 
+// è un po' bruttino ma è comunque una definizione di una cosa dichiarata nel file h
+std::string Book::default_string = "Not_specified";
 
 Book::Book(	
     std::string name,
