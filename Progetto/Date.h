@@ -5,23 +5,12 @@
 
 class Date
 {
-private:
-	// specifico le variabili private della classe Date
-	// m è del tipo UDT Month, creato con la enum Month
+public:
 	
-	static constexpr int max_day_feb = 29; // il 29 febbraio mi servirà per il check sul mese febbraio
-	static constexpr int next_year = 2023; // un libro non può avere anno di copyright successivo a quello corrente, mi serve per il check
-	struct InvalidDateException{};
 	enum Month
     {
         jan = 1, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
     };
-	
-	int day;
-	int year;
-	Month mon;
-	
-public:
 	
 	// costruttore, che comprende anche il costruttore di default, throws InvalidYearException() se l'anno è negativo
 	// se non specificati i parametri, creo la data "1 Gennaio 1970"
@@ -32,10 +21,22 @@ public:
 	Month get_month() const { return mon; }
 	int get_year() const { return year; }
 	
-	//controllo la validità di una data
-	bool is_valid_date(int d, Month m, int y);
-	//controllo se l'anno è bisestile
-	bool is_leap_year(int y);
+	// funzioni statiche, non agiscono su un oggetto di tipo Date
+	static bool is_valid_date(int d, Date::Month m, int y);
+	static bool is_leap_year(int y);
+	
+private:
+	// specifico le variabili private della classe Date
+	// m è del tipo UDT Month, creato con la enum Month
+	
+	static constexpr int max_day_feb = 29; // il 29 febbraio mi servirà per il check sul mese febbraio
+	static constexpr int next_year = 2023; // un libro non può avere anno di copyright successivo a quello corrente, mi serve per il check
+	struct InvalidDateException{};
+
+	
+	int day;
+	int year;
+	Month mon;
 };
 
 // overloading operatori

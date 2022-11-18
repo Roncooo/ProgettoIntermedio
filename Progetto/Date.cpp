@@ -38,12 +38,6 @@ bool Date::is_leap_year(int y)
 	return false;
 }
 
-
-std::ostream& operator<<(std::ostream& os, Date d)
-{
-	return os<<d.get_day()<<"/ "<<d.get_month()<<"/ "<<d.get_year()<<"\n"; 
-}
-
 bool Date::is_valid_date(int d, Month m, int y)
 {
 	if(y > next_year || y < 0)
@@ -68,10 +62,16 @@ bool Date::is_valid_date(int d, Month m, int y)
 	}
 	if(m == apr || m == jun || m == sep || m == nov)
 	{
-        if(d > 30)
-            return false;
-        return true;
-    }
+		if(d > 30)
+			return false;
+	}
+	return true;
+}
+
+// secondo me << non deve andare a capo
+std::ostream& operator<<(std::ostream& os, Date d)
+{
+	return os<<d.get_day()<<"/"<<d.get_month()<<"/"<<d.get_year(); 
 }
 
 bool operator<(Date first, Date second)
