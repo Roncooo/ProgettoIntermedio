@@ -29,8 +29,8 @@ Date::Date(int d, Month m, int y) //siccome devo fare una verifica sugli argomen
 //     return false
 bool Date::is_leap_year(int y)
 {
-	if((y % 100 == 0) && (y % 400 == 0)) //se un anno è divisibile per 100 e per 400 è bisestile
-		return true;
+	if((y % 100 == 0) && (y % 400 != 0)) //se un anno è divisibile per 100 e per 400 è bisestile
+		return false;
 	
 	if(y % 4 == 0) //se un anno è divisibile per 4 è bisestile
 		return true;

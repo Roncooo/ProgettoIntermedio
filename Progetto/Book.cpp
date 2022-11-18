@@ -27,6 +27,70 @@ Book::Book(
 //{
 //}
 
+//costruttore di copia
+Book::Book(const Book& b)
+	:
+		isbn_code {b.isbn_code},
+		title {b.title},
+		auth_name {b.name},
+		auth_surname {b.auth_surname},
+		copyright_date {b.copyright_date}
+		availability {b.availability}
+	{
+	}
+
+//costruttore di spostamento
+Book::Book(Book&& b)
+	:
+		isbn_code {b.isbn_code},
+		title {b.title},
+		auth_name {b.name},
+		auth_surname {b.auth_surname},
+		copyright_date {b.copyright_date}
+		availability {b.availability}
+	{
+		b.isbn_code = Isbn("000-000-000-x");
+		b.title = default_string;
+		b.auth_name = default_string;
+		b.auth_surname = default_string;
+		b.copyright_date = Date();
+		b.availability = true;
+	}
+
+
+//assegnamento di copia
+Book& Book::operator= (const Book& b)
+{
+	isbn_code = b.isbn_code;
+	title = b.title;
+	auth_name = b.auth_name;
+	auth_surname = b.auth_surname;
+	copyright_date = b.copyright_date;
+	availability = b.availability;
+	return *this;
+}
+
+//assegnamento di spostamento
+Book& Book::operator= (Book&& b)
+{
+	isbn_code = b.isbn_code;
+	title = b.title;
+	auth_name = b.auth_name;
+	auth_surname = b.auth_surname;
+	copyright_date = b.copyright_date;
+	availability = b.availability;
+	
+	b.isbn_code = Isbn("000-000-000-x");
+	b.title = default_string;
+	b.auth_name = default_string;
+	b.auth_surname = default_string;
+	b.copyright_date = Date();
+	b.availability = true;
+	
+	return *this;
+}
+
+
 // getters
 std::string Book::get_isbn() { return isbn_code.isbn_str; }
 std::string Book::get_auth_name() { return auth_name; }
