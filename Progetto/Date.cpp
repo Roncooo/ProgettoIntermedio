@@ -8,16 +8,18 @@
 		// se il mese è febbraio devo invocare anche is_leap_year(yyyy)
 		// se il mese è marzo ... tutte queste if magari con una switch
 // nel costruttore if(!is_valid_date) throw new InvalidDateException();
-enum Date::Month
-{
-	jan = 1, feb, mar, june, july, aug, sept, oct, nov, dec 
-}
+
 	
-Date::Date(int d = 1, Month m = jan, int y = 2000):day{d}, mon{m}, year{y}
+Date::Date(int d, Month m, int y) //siccome devo fare una verifica sugli argomenti non ha senso fare un'init list
 {
-	if(y < 0)
-		throw new InvalidYearException();
-	
+	if(!is_valid_date(d, m, y))
+		throw new InvalidDateException();
+	else
+    {
+        day = d;
+        mon = m;
+        year = y;
+    }
 }
 
 // io la metterei helper function che prende un intero
@@ -25,54 +27,50 @@ Date::Date(int d = 1, Month m = jan, int y = 2000):day{d}, mon{m}, year{y}
 //io non capisco il senso del primo if, cioè secondo me dovrebbe essere:
 //if((this->year % 100 == 0) && (this->year % 400 != 0)) 
 //     return false
-bool Date::is_leap_year()
+bool Date::is_leap_year(int y)
 {
-	if((this->year % 100 == 0) && (this->year % 400 == 0)) //se un anno è divisibile per 100 e per 400 è bisestile
+	if((y % 100 == 0) && (y % 400 == 0)) //se un anno è divisibile per 100 e per 400 è bisestile
 		return true;
 	
-	if(this->year % 4 == 0) //se un anno è divisibile per 4 è bisestile
+	if(y % 4 == 0) //se un anno è divisibile per 4 è bisestile
 		return true;
 	
 	return false;
 }
 
 
-std::ostream& Date::operator<<(std::ostream& os, Date d)
+std::ostream& operator<<(std::ostream& os, Date d)
 {
 	return os<<d.get_day()<<"/ "<<d.get_month()<<"/ "<<d.get_year()<<"\n"; 
 }
 
-bool Date::is_valid_date()
+bool Date::is_valid_date(int d, Month m, int y)
 {
-	if(this->year > next_year || this-> year < 0)
+	if(y > next_year || y < 0)
 		return false;
-	else if(this->mon < 1 || this->mon > 12)
+	else if(m < 1 || m > 12)
 		return false;
-	else if(this->day < 0 || this->day > 31)
+	else if(d < 0 || d > 31)
 		return false;
 	
 	//ora devo fare i controlli sui vari mesi
-	if(this->is_leap_year() && this->mon == feb) //febbraio 
+	if( (is_leap_year(y)) && (m == feb) ) //febbraio 
 	{
-		if(this->day > max_day_feb) //domanda: i magic number sono brutti, ma in questo caso quindi è meglio fare tante variabili constexpr? 
-		{
+		if(d > max_day_feb) //domanda: i magic number sono brutti, ma in questo caso quindi è meglio fare tante variabili constexpr? 
 			return false;
-		}
 		return true;
 	}
-	else if((this->mon == feb) && (!this->is_leap_year()))
+	else if( (!is_leap_year(y)) && (m == feb) )
 	{
-		if(this->day > 28)
+		if(d > max_day_feb-1)
 			return false;
 		return true;
 	}
 	//non la implemento con una switch perché il modo in cui gestisco i casi particolari è lo stesso, altrimenti avrei un codice ripetitivo
-	if(this->mon == apr || this->mon == june || this->mon == sept || this->mon == nov)
-	   {
-		   if(this->day > 30)
-		   {
-			return false;
-		   }
-		   return true;
-	   }
+	if(m == apr || m == jun || m == sep || m == nov)
+	{
+        if(d > 30)
+            return false;
+        return true;
+    }
 }

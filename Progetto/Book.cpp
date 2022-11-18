@@ -2,8 +2,10 @@
 
 // è brutto secondo voi mettere i parametri così?
 //non è bellissimo, ma è più chiaro e l'ho visto fare anche a giulio lol
+
+
 Book::Book(	
-	std::string name, 
+    std::string name,
 	std::string surname, 
 	std::string book_title, 
 	std::string isbn, 
