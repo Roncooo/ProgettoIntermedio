@@ -19,7 +19,11 @@ public:
 		std::string isbn = "000-000-000-x", 
 		Date copyright, // teoricamente basta a chiamare il costruttore di default di date 
 		bool availability_status = true);	// argomento di default, per ora metto solo questo ma dobbiamo pensare agli altri
-                                               
+    
+	Book (const Book& b);
+	
+	Book (Book&& b);
+	
 	// getters
 	std::string get_isbn();			// possiamo far uscire Isbn? secondo me no
 	std::string get_auth_name();
@@ -67,9 +71,9 @@ private:
 	class ImpossibleToBorrowUnvailableBook{};
 	class ImpossibleToReturnAvailableBook{};
 	
-	static std::string default_string = "Not_specified";
+	static std::string default_string;
 };
-
+std::string default_string = "Not_specified";
 
 // Ghidoni le ha messe fuori
 bool operator==(Book b, Book c);
