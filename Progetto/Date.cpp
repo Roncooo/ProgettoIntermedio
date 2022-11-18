@@ -26,8 +26,10 @@ bool Date::is_leap_year()
 {
 	if((this->year % 100 == 0) && (this->year % 400 == 0)) //se un anno è divisibile per 100 e per 400 è bisestile
 		return true;
-	else if(this->year % 4 == 0) //se un anno è divisibile per 4 è bisestile
+	
+	if(this->year % 4 == 0) //se un anno è divisibile per 4 è bisestile
 		return true;
+	
 	return false;
 }
 
