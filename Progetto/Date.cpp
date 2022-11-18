@@ -21,7 +21,10 @@ Date::Date(int d = 1, Month m = jan, int y = 2000):day{d}, mon{m}, year{y}
 }
 
 // io la metterei helper function che prende un intero
-//io no, ha senso che la funzioni acceda alla mia istanza 
+//io no, ha senso che la funzioni acceda alla mia istanza
+//io non capisco il senso del primo if, cioè secondo me dovrebbe essere:
+//if((this->year % 100 == 0) && (this->year % 400 != 0)) 
+//     return false
 bool Date::is_leap_year()
 {
 	if((this->year % 100 == 0) && (this->year % 400 == 0)) //se un anno è divisibile per 100 e per 400 è bisestile
