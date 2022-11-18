@@ -1,57 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 <Session Name="C:\Users\Beatrice\OneDrive\Desktop\Progetto Intermedio\ProgettoIntermedio.workspace">
-  <int Value="4" Name="m_selectedTab"/>
+  <int Value="2" Name="m_selectedTab"/>
   <wxString Value="C:\Users\Beatrice\OneDrive\Desktop\Progetto Intermedio\ProgettoIntermedio.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="C:\Users\Beatrice\OneDrive\Desktop\Progetto Intermedio\Progetto\Date.h" Name="FileName"/>
-      <int Value="1" Name="FirstVisibleLine"/>
-      <int Value="14" Name="CurrentLine"/>
-=======
-<Session Name="C:\Users\franc\Desktop\ProgettoIntermedio\ProgettoIntermedio.workspace">
-  <int Value="0" Name="m_selectedTab"/>
-  <wxString Value="C:\Users\franc\Desktop\ProgettoIntermedio\ProgettoIntermedio.workspace" Name="m_workspaceName"/>
-  <TabInfoArray Name="TabInfoArray">
-    <TabInfo>
-      <wxString Value="C:\Users\franc\Desktop\ProgettoIntermedio\Progetto\Date.cpp" Name="FileName"/>
-      <int Value="21" Name="FirstVisibleLine"/>
-      <int Value="30" Name="CurrentLine"/>
->>>>>>> 1539d2ca9d1bcdc8e92079c735546ec96aefeb62
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-<<<<<<< HEAD
       <wxString Value="C:\Users\Beatrice\OneDrive\Desktop\Progetto Intermedio\Progetto\Date.cpp" Name="FileName"/>
-      <int Value="66" Name="FirstVisibleLine"/>
-      <int Value="59" Name="CurrentLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks">
-        <wxString Value="32:3"/>
+        <wxString Value="34:3"/>
       </wxArrayString>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\Beatrice\OneDrive\Desktop\Progetto Intermedio\Progetto\Book.h" Name="FileName"/>
-=======
-      <wxString Value="C:\Users\franc\Desktop\ProgettoIntermedio\Progetto\Book.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\franc\Desktop\ProgettoIntermedio\Progetto\Book.cpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\franc\Desktop\ProgettoIntermedio\Progetto\Date.h" Name="FileName"/>
->>>>>>> 1539d2ca9d1bcdc8e92079c735546ec96aefeb62
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="59" Name="FirstVisibleLine"/>
+      <int Value="69" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
@@ -59,23 +30,13 @@
       <wxString Value="C:\Users\Beatrice\OneDrive\Desktop\Progetto Intermedio\Progetto\Book.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
       <int Value="0" Name="CurrentLine"/>
-<<<<<<< HEAD
-=======
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\franc\Desktop\ProgettoIntermedio\Progetto\tester.cpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
->>>>>>> 1539d2ca9d1bcdc8e92079c735546ec96aefeb62
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\Beatrice\OneDrive\Desktop\Progetto Intermedio\Progetto\tester.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="1" Name="CurrentLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
