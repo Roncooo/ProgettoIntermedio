@@ -38,7 +38,10 @@ public:
 	bool is_leap_year(int y);
 };
 
-//bool is_valid_date(); //la costruisco all'infuori della classe perchè effettivamente lei non opera su un oggetto date
+// overloading operatori
 std::ostream& operator<<(std::ostream& os, Date d);
-
+bool operator<(Date first, Date second);
+bool operator>(Date first, Date second);
+bool operator==(Date first, Date second);
+bool operator!=(Date first, Date second);
 #endif // DATE_H

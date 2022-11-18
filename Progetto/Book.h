@@ -17,9 +17,9 @@ public:
 		std::string surname = default_string, 
 		std::string book_title = default_string, 
 		std::string isbn = "000-000-000-x", 
-		Date copyright = new Date(), 
+		Date copyright, // teoricamente basta a chiamare il costruttore di default di date 
 		bool availability_status = true);	// argomento di default, per ora metto solo questo ma dobbiamo pensare agli altri
-                                                //è availibility non availability_status(?)
+                                               
 	// getters
 	std::string get_isbn();			// possiamo far uscire Isbn? secondo me no
 	std::string get_auth_name();

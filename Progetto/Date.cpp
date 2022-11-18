@@ -66,11 +66,33 @@ bool Date::is_valid_date(int d, Month m, int y)
 			return false;
 		return true;
 	}
-	//non la implemento con una switch perché il modo in cui gestisco i casi particolari è lo stesso, altrimenti avrei un codice ripetitivo
 	if(m == apr || m == jun || m == sep || m == nov)
 	{
         if(d > 30)
             return false;
         return true;
     }
+}
+
+bool operator<(Date first, Date second)
+{
+    if( first.get_year() < second.get_year() )
+        return true;
+    if( first.get_month() < second.get_month() )
+		return true;
+	if( first.get_day() < second.get_day() )
+		return true;
+	return false;
+}
+bool operator>(Date first, Date second)
+{
+	return second < first;
+}
+bool operator==(Date first, Date second)
+{
+    return ( !(first > second) && !(first < second) );
+}
+bool operator!=(Date first, Date second)
+{
+    return !(first == second);
 }
