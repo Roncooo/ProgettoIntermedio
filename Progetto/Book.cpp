@@ -1,13 +1,10 @@
 #include "Book.h"
 
 // è brutto secondo voi mettere i parametri così?
-<<<<<<< HEAD
 //non è bellissimo, ma è più chiaro e l'ho visto fare anche a giulio lol
-Book(	
-=======
+
 Book::Book(	
->>>>>>> fa19d80a694560b1cf88e25f9169191751d72dea
-	std::string name, 
+    std::string name, 
 	std::string surname, 
 	std::string book_title, 
 	std::string isbn, 
