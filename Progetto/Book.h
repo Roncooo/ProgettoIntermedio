@@ -12,11 +12,13 @@ public:
 	// con tutti i parametri
 	// 
 	// Book my_favourite_book(“David”, “Foster Wallace”, “Una cosa divertente che non farò mai più”, “887-521-837-4”);
-	Book(	std::string name, std::string surname, 
-			std::string book_title, 
-			std::string isbn, 
-			Date copyright, 
-			bool availability_status = true);	// argomento di default, per ora metto solo questo ma dobbiamo pensare agli altri
+	Book(	
+		std::string name = default_string, 
+		std::string surname = default_string, 
+		std::string book_title = default_string, 
+		std::string isbn = "000-000-000-x", 
+		Date copyright = new Date(), 
+		bool availability_status = true);	// argomento di default, per ora metto solo questo ma dobbiamo pensare agli altri
                                                 //è availibility non availability_status(?)
 	// getters
 	std::string get_isbn();			// possiamo far uscire Isbn? secondo me no
@@ -52,6 +54,7 @@ private:
 		class InvalidIsbnException{};
 	};
 
+
 	// variabile
 	Isbn isbn_code;
 	std::string title;
@@ -64,6 +67,7 @@ private:
 	class ImpossibleToBorrowUnvailableBook{};
 	class ImpossibleToReturnAvailableBook{};
 	
+	static std::string default_string = "Not_specified";
 };
 
 

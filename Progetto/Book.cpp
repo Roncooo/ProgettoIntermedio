@@ -2,15 +2,21 @@
 
 // è brutto secondo voi mettere i parametri così?
 //non è bellissimo, ma è più chiaro e l'ho visto fare anche a giulio lol
+<<<<<<< HEAD
 
 Book::Book(	
     std::string name, 
+=======
+Book::Book(	
+	std::string name, 
+>>>>>>> 1539d2ca9d1bcdc8e92079c735546ec96aefeb62
 	std::string surname, 
 	std::string book_title, 
 	std::string isbn, 
 	Date copyright, 
 	bool availability_status
     )
+	// costruttore con initializer list così non abbiamo problemi di costruttore di default
 	:
 		isbn_code{Isbn(isbn)},
 		title{book_title},

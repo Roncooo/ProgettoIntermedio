@@ -13,8 +13,13 @@ OutDir                 :=$(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
+<<<<<<< HEAD
 User                   :=Beatrice
 Date                   :=18/11/2022
+=======
+User                   :=Francesco
+Date                   :=11/18/2022
+>>>>>>> 1539d2ca9d1bcdc8e92079c735546ec96aefeb62
 CodeLitePath           :="C:/Program Files/CodeLite"
 MakeDirCommand         :=mkdir
 LinkerName             :="C:/Program Files/mingw64/bin/g++.exe"
