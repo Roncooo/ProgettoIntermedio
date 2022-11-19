@@ -1,10 +1,9 @@
 #include "Book.h"
 
-// è brutto secondo voi mettere i parametri così?
-//non è bellissimo, ma è più chiaro e l'ho visto fare anche a giulio lol
-
-// è un po' bruttino ma è comunque una definizione di una cosa dichiarata nel file h
 std::string Book::default_string = "Not_specified";
+
+// perché il copyright scade dopo 70 anni
+Date Book::default_date = Date(1,1,1952);
 
 Book::Book(	
     std::string name,
@@ -14,7 +13,6 @@ Book::Book(
 	Date copyright, 
 	bool availability_status
     )
-	// costruttore con initializer list così non abbiamo problemi di costruttore di default
 	:
 		isbn_code{Isbn(isbn)},
 		title{book_title},
@@ -25,6 +23,7 @@ Book::Book(
 	{ 
 		// constructor body, intentionally left blank
 	}
+
 //Book::~Book()
 //{
 //}
@@ -39,6 +38,7 @@ Book::Book(const Book& b)
 		copyright_date {b.copyright_date},
 		availability {b.availability}
 	{
+		// constructor body, intentionally left blank
 	}
 
 //costruttore di spostamento
@@ -55,7 +55,7 @@ Book::Book(Book&& b)
 		b.title = default_string;
 		b.auth_name = default_string;
 		b.auth_surname = default_string;
-		b.copyright_date = Date();
+		b.copyright_date = default_date;	// assegnamento di copia di date 
 		b.availability = true;
 	}
 
@@ -67,7 +67,7 @@ Book& Book::operator= (const Book& b)
 	title = b.title;
 	auth_name = b.auth_name;
 	auth_surname = b.auth_surname;
-	copyright_date = b.copyright_date;
+	copyright_date = b.copyright_date;	// assegnamento di copia di date
 	availability = b.availability;
 	return *this;
 }
@@ -79,14 +79,14 @@ Book& Book::operator= (Book&& b)
 	title = b.title;
 	auth_name = b.auth_name;
 	auth_surname = b.auth_surname;
-	copyright_date = b.copyright_date;
+	copyright_date = b.copyright_date;	// assegnamento di copia di date 
 	availability = b.availability;
 	
 	b.isbn_code = Isbn("000-000-000-x");
 	b.title = default_string;
 	b.auth_name = default_string;
 	b.auth_surname = default_string;
-	b.copyright_date = Date();
+	b.copyright_date = default_date;	// assegnamento di copia di date 
 	b.availability = true;
 	
 	return *this;
@@ -101,7 +101,7 @@ std::string Book::get_title() { return title; }
 Date Book::get_copyright() { return copyright_date; }
 bool Book::is_available() { return availability; }
 
-// cambiano lo stato di is_available se ha senso
+// cambiano lo stato di is_available se è ragionevole
 void Book::borrow_book()
 {
 	if(this->is_available())
@@ -109,6 +109,7 @@ void Book::borrow_book()
 	else
 		throw ImpossibleToBorrowUnvailableBook();
 }
+
 void Book::return_book()
 {
 	if(!(this->is_available()))
@@ -117,9 +118,8 @@ void Book::return_book()
 		throw ImpossibleToReturnAvailableBook();
 }
 
-
-// costruttore, throws Invalid ISBN code
-Book::Isbn::Isbn(std::string code)
+// costruttore di ISBN
+Book::Isbn::Isbn(std::string code)	// throws Invalid ISBN code
 {
 	if(is_valid_isbn(code))
 		isbn_str = code;
@@ -127,9 +127,7 @@ Book::Isbn::Isbn(std::string code)
 		throw InvalidIsbnException();
 } 
 
-
-// nnn-nnn-nnn-x
-// x lettera o numero ma non carattere speciale
+// valid format: nnn-nnn-nnn-x
 // ci sono un po' di maginumbers, dite che va bene lo stesso?
 bool Book::Isbn::is_valid_isbn(std::string s)
 {
@@ -148,14 +146,13 @@ bool Book::Isbn::is_valid_isbn(std::string s)
 		return false;
 	
 	char last = s[12];
-	// controllo il numero progressivo del carattere nella tabella ascii
-	if( 
-		!(isdigit(last)) && 		// last is not a number digit
-		!(last>=65 && last<=90) &&  // last is not a capital letter
-		!(last>=97 && last<=122)    // last is not a lowercase letter
-	  )
+	// controllo la posizione del carattere nella tabella ascii
+	if	( 
+			!(isdigit(last)) 		&&	// last is not a number digit
+			!(last>=65 && last<=90) &&	// last is not a capital letter
+			!(last>=97 && last<=122)	// last is not a lowercase letter
+		)
 		return false;
-	
 	// else
 	return true;
 }

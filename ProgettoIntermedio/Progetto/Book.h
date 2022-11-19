@@ -9,23 +9,27 @@ class Book
 public:
 		
 	// COSTRUTTORI
-	// con tutti i parametri
-	// 
-	// Book my_favourite_book(“David”, “Foster Wallace”, “Una cosa divertente che non farò mai più”, “887-521-837-4”);
 	Book(	
 		std::string name = default_string, 
 		std::string surname = default_string, 
 		std::string book_title = default_string, 
-		std::string isbn = "000-000-000-x", 
-		Date copyright = Date(), // teoricamente basta a chiamare il costruttore di default di date 
-		bool availability_status = true);	// argomento di default, per ora metto solo questo ma dobbiamo pensare agli altri
-    
-	Book (const Book& b);
+		std::string isbn = "000-000-000-x",
+		Date copyright = default_date,	// assegnamento di copia di date 
+		bool availability_status = true
+		);
 	
+	// costruttore di copia
+	Book (const Book& b);
+	// costruttore di spostamento
 	Book (Book&& b);
+	// assegnamento di copia
+	Book& operator= (const Book& b);
+	// assegnamento di spostamento
+	Book& operator= (Book&& b);
+
 	
 	// getters
-	std::string get_isbn();			// possiamo far uscire Isbn? secondo me no
+	std::string get_isbn();
 	std::string get_auth_name();
 	std::string get_auth_surname();
 	std::string get_title();
@@ -36,28 +40,23 @@ public:
 	void borrow_book(); 	// throws ImpossibleToBorrowUnvailableBook
 	void return_book();		// throws ImpossibleToReturnAvailableBook
 		
-	// assegnamenti
-	Book& operator= (const Book& b);
-	Book& operator= (Book&& b);
-
-// Ghidoni in Rational non mette il distruttore	
+// Ghidoni in Rational non mette il distruttore
 //	~Book();
 private:
 	
 	class Isbn
 	{
 	public:
+		
 		Isbn(std::string code); // throws Invalid ISBN code
+		
 		static bool is_valid_isbn(std::string code);
-			// non ha senso che venga chiamato su un oggetto Isbn, meglio se prende una stringa e controlla quella
-			// quindi è "statico"
-			// nnn-nnn-nnn-x  con x lettera o numero ma non carattere speciale
+		
 		// variabile membro
 		std::string isbn_str;
 
-		// è giusto dichiararla qui? o meglio fuori da isbn?
-		// e perché non struct?
-		class InvalidIsbnException{};
+		// eccezione
+		struct InvalidIsbnException{};
 	};
 
 
@@ -68,16 +67,17 @@ private:
 	std::string auth_surname;
 	Date copyright_date;
 	bool availability;
-		
-	// eccezioni di Book, le mettiamo struct?
-	class ImpossibleToBorrowUnvailableBook{};
-	class ImpossibleToReturnAvailableBook{};
+	
+	// eccezioni
+	struct ImpossibleToBorrowUnvailableBook{};
+	struct ImpossibleToReturnAvailableBook{};
 	
 	// variabili statiche
 	static std::string default_string;
+	static Date default_date;
 };
 
-// Ghidoni le ha messe fuori
+// dichiarazioni ***OVERLOADING OPERATORI***
 bool operator==(Book b, Book c);
 bool operator!=(Book b, Book c);
 std::ostream& operator<<(std::ostream& os, Book b);
