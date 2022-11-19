@@ -1,5 +1,5 @@
-C:\Users\franc\Desktop\ProgettoIntermedio\ProgettoIntermedio\Progetto\main.cpp
-C:\Users\franc\Desktop\ProgettoIntermedio\ProgettoIntermedio\Progetto\Book.cpp
-C:\Users\franc\Desktop\ProgettoIntermedio\ProgettoIntermedio\Progetto\Book.h
-C:\Users\franc\Desktop\ProgettoIntermedio\ProgettoIntermedio\Progetto\Date.h
-C:\Users\franc\Desktop\ProgettoIntermedio\ProgettoIntermedio\Progetto\Date.cpp
+C:\Users\Beatrice\OneDrive\Desktop\ProgettoIntermedio\ProgettoIntermedio\ProgettoIntermedio\Progetto\main.cpp
+C:\Users\Beatrice\OneDrive\Desktop\ProgettoIntermedio\ProgettoIntermedio\ProgettoIntermedio\Progetto\Book.h
+C:\Users\Beatrice\OneDrive\Desktop\ProgettoIntermedio\ProgettoIntermedio\ProgettoIntermedio\Progetto\Book.cpp
+C:\Users\Beatrice\OneDrive\Desktop\ProgettoIntermedio\ProgettoIntermedio\ProgettoIntermedio\Progetto\Date.h
+C:\Users\Beatrice\OneDrive\Desktop\ProgettoIntermedio\ProgettoIntermedio\ProgettoIntermedio\Progetto\Date.cpp
