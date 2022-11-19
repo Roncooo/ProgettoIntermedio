@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "Book.h"
 
 int main(int argc, char **argv)
@@ -19,15 +20,15 @@ int main(int argc, char **argv)
 		//	Date prova = Date(32,Date::Month::jan,2005);	// giustamente lancia invalid date
 		//	Date prova = Date(-5,Date::Month::jan,2005);	// giustamente lancia invalid date
 		//	Date prova = Date(2,Date::Month::fulvio,2005);	// giustamente lancia 'fulvio' is not a member of Date::Month
-//	std::cout << Date::is_valid_date(29,Date::Month::feb,2005) << "\n";
-
+		//	std::cout << Date::is_valid_date(29,Date::Month::feb,2005);
 
 	//	COSTRUZIONE DI BOOK
 	Book my_favourite_book (name, surname, title, isbn);
 	
 	std::cout << my_favourite_book << std::endl;
 	
-	
+	// creo un vector di book con i costruttori di default 
+	std::vector<Book> shelf(10);
 	
 	return 0;
 }
