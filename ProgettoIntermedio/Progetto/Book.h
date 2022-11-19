@@ -76,7 +76,6 @@ private:
 	// variabili statiche
 	static std::string default_string;
 };
-std::string default_string = "Not_specified";
 
 // Ghidoni le ha messe fuori
 bool operator==(Book b, Book c);
