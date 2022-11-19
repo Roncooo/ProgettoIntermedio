@@ -11,10 +11,9 @@ int main(int argc, char **argv)
 	std::string isbn = "887-521-837-4";
 	
 	//	testo Date
-		//	Date d = Date(20,12,1970);						// error: invalid conversion from 'int' to 'Date::Month'
-			// è brutto che si debba fare così per forza, ha senso inventarsi un modo per fare la conversione da int a Month?
-			Date d = Date(20,Date::Month::dec,2002);		
-	std::cout << d << " ok\n";
+		Date d1 = Date(20,12,1970);
+		Date d2 = Date(20,Date::Month::dec,2002);
+	std::cout << d1 << " ok\n";
 		//	Date prova = Date(29,Date::Month::feb,2005);	// giustamente lancia invalid date
 		//	Date prova = Date(31,Date::Month::apr,2005);	// giustamente lancia invalid date
 		//	Date prova = Date(32,Date::Month::jan,2005);	// giustamente lancia invalid date

@@ -15,6 +15,8 @@ public:
 	// costruttore, che comprende anche il costruttore di default, throws InvalidYearException() se l'anno è negativo
 	// se non specificati i parametri, creo la data "1 Gennaio 1970"
 	Date(int d = 1, Month m = jan, int y = 1970);
+	// costruttore che prende anche il mese passato per intero
+	Date(int d, int m, int y);
 	
 	//funzioni getter
 	int get_day() const { return day; }

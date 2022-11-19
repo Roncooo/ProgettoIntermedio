@@ -23,6 +23,19 @@ Date::Date(int d, Month m, int y) //siccome devo fare una verifica sugli argomen
     }
 }
 
+// costruttore che prende anche il mese passato per intero
+Date::Date(int d, int m, int y)
+{
+	if(!is_valid_date(d, Month(m), y))
+		throw new InvalidDateException();
+	else
+    {
+        day = d;
+        mon = Month(m);
+        year = y;
+    }
+}
+
 // io la metterei helper function che prende un intero
 //io no, ha senso che la funzioni acceda alla mia istanza
 //io non capisco il senso del primo if, cioè secondo me dovrebbe essere:
