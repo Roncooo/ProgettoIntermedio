@@ -101,6 +101,13 @@ std::string Book::get_title() { return title; }
 Date Book::get_copyright() { return copyright_date; }
 bool Book::is_available() { return availability; }
 
+// setters
+void set_isbn(std::string s) { isbn_code = Isbn(s); }
+void set_auth_name(std::string s) { auth_name = s; }
+void set_auth_surname(std::string s) { auth_surname = s; }
+void set_title(std::string s) { title = s; }
+void set_copyright(Date d) { copyright_date = d; }
+
 // cambiano lo stato di is_available se è ragionevole
 void Book::borrow_book()
 {

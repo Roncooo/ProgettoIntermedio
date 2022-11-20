@@ -27,7 +27,6 @@ public:
 	// assegnamento di spostamento
 	Book& operator= (Book&& b);
 
-	
 	// getters
 	std::string get_isbn();
 	std::string get_auth_name();
@@ -35,6 +34,13 @@ public:
 	std::string get_title();
 	Date get_copyright();
 	bool is_available();
+
+	// setters, per scelta non ritornano il dato precedente
+	void set_isbn(std::string);
+	void set_auth_name(std::string);
+	void set_auth_surname(std::string);
+	void set_title(std::string);
+	void set_copyright(Date);
 
 	// cambiano lo stato di is_available se ha senso
 	void borrow_book(); 	// throws ImpossibleToBorrowUnvailableBook
