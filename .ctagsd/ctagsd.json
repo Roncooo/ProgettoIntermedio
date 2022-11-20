@@ -3,7 +3,7 @@
  "ignore_spec": "/.git/;/.svn/;/build/;/build-;/CPack_Packages/;/CMakeFiles/",
  "codelite_indexer": "C:\\Program Files\\CodeLite\\codelite-ctags.exe",
  "limit_results": 150,
- "search_path": ["."],
+ "search_path": [".", "c:\\Users\\fulvi\\downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-14.0.6-mingw-w64ucrt-10.0.0-r2\\mingw64\\include", "c:\\Users\\fulvi\\downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-14.0.6-mingw-w64ucrt-10.0.0-r2\\mingw64\\include\\c++\\12.2.0", "c:\\Users\\fulvi\\downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-14.0.6-mingw-w64ucrt-10.0.0-r2\\mingw64\\include\\c++\\12.2.0\\backward", "c:\\Users\\fulvi\\downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-14.0.6-mingw-w64ucrt-10.0.0-r2\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32", "c:\\Users\\fulvi\\downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-14.0.6-mingw-w64ucrt-10.0.0-r2\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include", "c:\\Users\\fulvi\\downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-14.0.6-mingw-w64ucrt-10.0.0-r2\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed", "c:\\Users\\fulvi\\downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-14.0.6-mingw-w64ucrt-10.0.0-r2\\mingw64\\x86_64-w64-mingw32\\include"],
  "types": [{
    "key": "std::unique_ptr::pointer",
    "value": "_Tp"
