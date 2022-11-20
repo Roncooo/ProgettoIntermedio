@@ -19,13 +19,13 @@ public:
 		);
 
 	// costruttore di copia
-	Book (const Book& b);
+//	Book (const Book& b);
 	// costruttore di spostamento
-	Book (Book&& b);
+//	Book (Book&& b);
 	// assegnamento di copia
-	Book& operator= (const Book& b);
+//	Book& operator= (const Book& b);
 	// assegnamento di spostamento
-	Book& operator= (Book&& b);
+//	Book& operator= (Book&& b);
 
 	// getters
 	std::string get_isbn();
