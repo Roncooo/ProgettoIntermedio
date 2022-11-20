@@ -5,28 +5,28 @@
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="C:\Users\fulvi\OneDrive\Desktop\codelite\GitHub\Progetto\Date.h" Name="FileName"/>
-      <int Value="6" Name="FirstVisibleLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
       <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\fulvi\OneDrive\Desktop\codelite\GitHub\Progetto\Date.cpp" Name="FileName"/>
-      <int Value="59" Name="FirstVisibleLine"/>
-      <int Value="32" Name="CurrentLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\fulvi\OneDrive\Desktop\codelite\GitHub\Progetto\Book.h" Name="FileName"/>
-      <int Value="72" Name="FirstVisibleLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
       <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\fulvi\OneDrive\Desktop\codelite\GitHub\Progetto\Book.cpp" Name="FileName"/>
-      <int Value="6" Name="FirstVisibleLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
       <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
@@ -34,7 +34,7 @@
     <TabInfo>
       <wxString Value="C:\Users\fulvi\OneDrive\Desktop\codelite\GitHub\Progetto\main.cpp" Name="FileName"/>
       <int Value="27" Name="FirstVisibleLine"/>
-      <int Value="30" Name="CurrentLine"/>
+      <int Value="40" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
