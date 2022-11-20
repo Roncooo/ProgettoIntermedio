@@ -13,45 +13,48 @@ int main(int argc, char **argv)
 	string surname = "Foster Wallace";
 	string isbn = "887-521-837-4";
 	
-	//	testo Date
-	cout << "Creo due date, una passando un tipo Month(d1) e una un int(d2) per mese:\n";
-	Date d1 = Date(20,12,1970);
-	Date d2 = Date(20,Date::Month::dec,2002);
-	cout << "La data d1 e': "<< d1 << ", ok!\n";
-	cout << "La data d2 e': "<< d2 << ", ok!\n";
-	// testo una Date invalida
-	cout << "Creo 6 date:\n";
 	try
 	{
+		//	testo Date
+		cout << "Creo delle date:\n";
 		Date d1 = Date(20,12,1970);
 		Date d2 = Date(20,Date::Month::dec,2002);
+		/* creando queste giustamente mi stampa la cerr
 		Date prova1 = Date(29,Date::Month::feb,2005);	// invalida: non esiste il 29 febbraio
-		Date prova3 = Date(31,Date::Month::apr,2005);	// invalida: non esiste il 31 aprile
-		Date prova4 = Date(32,Date::Month::jan,2005);	// invalida: non esiste il 32 gennaio
-		Date prova5 = Date(-5,Date::Month::jan,2005);	// invalida: non esiste il giorno -5
-		Date prova6 = Date(2,Date::Month::Bjarne Stroustrup,2005);	//invalida: non esiste il mese Bjarne Stroustrup
-		
+		Date prova2 = Date(31,Date::Month::apr,2005);	// invalida: non esiste il 31 aprile
+		Date prova3 = Date(32,Date::Month::jan,2005);	// invalida: non esiste il 32 gennaio
+		Date prova4 = Date(-5,Date::Month::jan,2005);	// invalida: non esiste il giorno -5*/ 
 		cout << "La data d1 e': "<< d1 << ", ok!\n";
 		cout << "La data d2 e': "<< d2 << ", ok!\n";
-		cout << "La data prova1 e': "<< prova1 << ", ok!\n";
-		cout << "La data prova2 e': "<< prova2 << ", ok!\n";
-		cout << "La data prova3 e': "<< prova3 << ", ok!\n";
-		cout << "La data prova4 e': "<< prova4 << ", ok!\n";
-		cout << "La data prova5 e': "<< prova5 << ", ok!\n";
-		cout << "La data prova6 e': "<< prova6 << ", ok!\n";
+		
+		//	book
+		Book last_book_read = Book("Adam", "Douglas", "The Hitchhikker's Guide to the Galaxy");
+		cout << last_book_read;
+		// mettendo una data precedente al 1/1/52 giustamente lancia eccezione
+		Book book_im_reading = Book("Hannah", "Arendt", "La banalita' del male", "888-222-444-r", true);
+		cout << book_im_reading;
+		// prendo in prestito book_im_reading
+		book_im_reading.borrow_book();
+		if(book_im_reading.is_available())
+		{
+			cout << "Libro disponibile per il prestito\n";
+		}
+		else
+		{
+			cout << "Libro non disponibile per il prestito\n";
+		}
 	}
-	catch(Date::InvalidDateException())
+	catch(Date::InvalidDateException* e)
 	{
-		cout<<"Hai creato una data non valida!";
+		cerr<<"Hai creato una data invalida!\n";
 	}
-		//	Date prova = Date(29,Date::Month::feb,2005);	// giustamente lancia invalid date
-		//	Date prova = Date(31,Date::Month::apr,2005);	// giustamente lancia invalid date
-		//	Date prova = Date(32,Date::Month::jan,2005);	// giustamente lancia invalid date
-		//	Date prova = Date(-5,Date::Month::jan,2005);	// giustamente lancia invalid date
-		//	Date prova = Date(2,Date::Month::fulvio,2005);	// giustamente lancia 'fulvio' is not a member of Date::Month
-		//	std::cout << Date::is_valid_date(29,Date::Month::feb,2005);
+	catch(Book::InvalidCopyrightDateException e)
+	{
+		cerr<<"Hai creato una data invalida per il copyright!\n";
+	}
 
 	//	COSTRUZIONE DI BOOK
+	//	io le metterei dentro il try catch
 	Book my_favourite_book (name, surname, title, isbn);
 	
 	std::cout << my_favourite_book << std::endl;

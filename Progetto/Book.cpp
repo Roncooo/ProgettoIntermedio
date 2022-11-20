@@ -21,7 +21,7 @@ Book::Book(
 		copyright_date{copyright},
 		availability{availability_status}
 	{ 
-		if(copyright.get_year()>this_year)
+		if((copyright.get_year() > this_year) || (copyright < default_date))
 		{
 			throw InvalidCopyrightDateException();
 		}
@@ -174,9 +174,10 @@ bool Book::Isbn::is_valid_isbn(std::string s)
 // overloading operatori
 bool operator==(Book b, Book c) { return b.get_isbn() == c.get_isbn(); }
 bool operator!=(Book b, Book c) { return b.get_isbn() != c.get_isbn(); }
+//ho messo che va a capo senno è brutto
 std::ostream& operator<<(std::ostream& os, Book b)
 {
 	std::string sep = ", ";
 	return os << b.get_auth_name() + sep + b.get_auth_surname() + sep +
-				b.get_title() + sep + b.get_isbn() + sep << b.get_copyright(); 
+				b.get_title() + sep + b.get_isbn() + sep << b.get_copyright() << "\n"; 
 }
