@@ -64,7 +64,7 @@ bool Date::is_valid_date(int d, Month m, int y)
 		return false;
 	else if(m < 1 || m > 12)
 		return false;
-	else if(d < 0 || d > 31)
+	else if(d < 1 || d > 31)
 		return false;
 	// controlli sui singoli mesi
 	if((is_leap_year(y)) && (m == feb))  
