@@ -42,7 +42,6 @@ private:
 	Month mon;
 	
 	static constexpr int max_day_feb = 29; // il 29 febbraio mi servirà per il check sul mese febbraio
-	static constexpr int next_year = 2023; // un libro non può avere anno di copyright successivo a quello corrente, mi serve per il check
 	
 	struct InvalidDateException{};
 };

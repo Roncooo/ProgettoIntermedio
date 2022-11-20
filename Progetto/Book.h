@@ -73,6 +73,8 @@ private:
 	// variabili statiche
 	static std::string default_string;
 	static Date default_date;
+	static constexpr int this_year = 2022; // evita un copyright impostato ad un valore futuro
+	
 };
 
 // overloading operatori

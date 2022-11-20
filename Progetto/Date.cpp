@@ -61,7 +61,7 @@ bool Date::is_leap_year(int y)
 
 bool Date::is_valid_date(int d, Month m, int y)
 {
-	if(y > next_year || y < 0)
+	if(y < 0)
 		return false;
 	else if(m < 1 || m > 12)
 		return false;

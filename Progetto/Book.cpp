@@ -14,6 +14,8 @@ Book::Book(
 	bool availability_status
     )
 	:
+		if(copyright.get_year()>this_year)
+			throw InvalidDateException();
 		isbn_code{Isbn(isbn)},
 		title{book_title},
 		auth_name{name},
@@ -102,7 +104,12 @@ void set_isbn(std::string s) { isbn_code = Isbn(s); }
 void set_auth_name(std::string s) { auth_name = s; }
 void set_auth_surname(std::string s) { auth_surname = s; }
 void set_title(std::string s) { title = s; }
-void set_copyright(Date d) { copyright_date = d; }
+void set_copyright(Date d)	// throws InvalidDateException
+{ 
+	if(d.get_year()>this_year)
+		throw InvalidDateException();
+	copyright_date = d; 
+}
 
 
 void Book::borrow_book()
