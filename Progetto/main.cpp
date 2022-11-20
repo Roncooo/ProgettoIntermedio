@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 	string title = "Una cosa divertente che non faro' mai piu'";
 	string name = "David";
 	string surname = "Foster Wallace";
-	sstring isbn = "887-521-837-4";
+	string isbn = "887-521-837-4";
 	
 	//	testo Date
 	cout << "Creo due date, una passando un tipo Month(d1) e una un int(d2) per mese:\n";

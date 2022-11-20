@@ -101,14 +101,14 @@ Date Book::get_copyright() { return copyright_date; }
 bool Book::is_available() { return availability; }
 
 // setters
-void set_isbn(std::string s) { isbn_code = Isbn(s); }
-void set_auth_name(std::string s) { auth_name = s; }
-void set_auth_surname(std::string s) { auth_surname = s; }
-void set_title(std::string s) { title = s; }
-void set_copyright(Date d)	// throws InvalidDateException
+void Book::set_isbn(std::string s) { isbn_code = Isbn(s); }
+void Book::set_auth_name(std::string s) { auth_name = s; }
+void Book::set_auth_surname(std::string s) { auth_surname = s; }
+void Book::set_title(std::string s) { title = s; }
+void Book::set_copyright(Date d)	// throws InvalidDateException
 { 
 	if(d.get_year()>this_year)
-		throw InvalidDateException();
+		throw Date::InvalidDateException();
 	copyright_date = d; 
 }
 
