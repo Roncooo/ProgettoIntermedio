@@ -1,11 +1,11 @@
 #include "Book.h"
 
 std::string Book::default_string = "Not_specified";
-
-// perché il copyright scade dopo 70 anni
+// scelta come data di riferimento per Book perché il copyright scade dopo 70 anni
 Date Book::default_date = Date(1,1,1952);
 
-Book::Book(	
+
+Book::Book(
     std::string name,
 	std::string surname, 
 	std::string book_title, 
@@ -23,10 +23,6 @@ Book::Book(
 	{ 
 		// constructor body, intentionally left blank
 	}
-
-//Book::~Book()
-//{
-//}
 
 //costruttore di copia
 Book::Book(const Book& b)
@@ -108,7 +104,7 @@ void set_auth_surname(std::string s) { auth_surname = s; }
 void set_title(std::string s) { title = s; }
 void set_copyright(Date d) { copyright_date = d; }
 
-// cambiano lo stato di is_available se è ragionevole
+
 void Book::borrow_book()
 {
 	if(this->is_available())
@@ -125,8 +121,9 @@ void Book::return_book()
 		throw ImpossibleToReturnAvailableBook();
 }
 
+
 // costruttore di ISBN
-Book::Isbn::Isbn(std::string code)	// throws Invalid ISBN code
+Book::Isbn::Isbn(std::string code)
 {
 	if(is_valid_isbn(code))
 		isbn_str = code;
@@ -135,7 +132,6 @@ Book::Isbn::Isbn(std::string code)	// throws Invalid ISBN code
 } 
 
 // valid format: nnn-nnn-nnn-x
-// ci sono un po' di maginumbers, dite che va bene lo stesso?
 bool Book::Isbn::is_valid_isbn(std::string s)
 {
 	char dlm = '-';
@@ -165,18 +161,9 @@ bool Book::Isbn::is_valid_isbn(std::string s)
 }
 
 
-// *** OVERLOADING OPERATORI ***
-
-bool operator==(Book b, Book c)
-{
-	return b.get_isbn() == c.get_isbn();
-}
-
-bool operator!=(Book b, Book c)
-{
-	return b.get_isbn() != c.get_isbn();
-}
-
+// overloading operatori
+bool operator==(Book b, Book c) { return b.get_isbn() == c.get_isbn(); }
+bool operator!=(Book b, Book c) { return b.get_isbn() != c.get_isbn(); }
 std::ostream& operator<<(std::ostream& os, Book b)
 {
 	std::string sep = ", ";

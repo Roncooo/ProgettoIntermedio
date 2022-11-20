@@ -7,17 +7,17 @@
 class Book
 {
 public:
-		
+
 	// COSTRUTTORI
-	Book(	
+	Book(
 		std::string name = default_string, 
 		std::string surname = default_string, 
 		std::string book_title = default_string, 
 		std::string isbn = "000-000-000-x",
-		Date copyright = default_date,	// assegnamento di copia di date 
+		Date copyright = default_date,		// assegnamento di copia di date 
 		bool availability_status = true
 		);
-	
+
 	// costruttore di copia
 	Book (const Book& b);
 	// costruttore di spostamento
@@ -36,54 +36,46 @@ public:
 	bool is_available();
 
 	// setters, per scelta non ritornano il dato precedente
-	void set_isbn(std::string);
+	void set_isbn(std::string);	// throws Invalid ISBN code
 	void set_auth_name(std::string);
 	void set_auth_surname(std::string);
 	void set_title(std::string);
 	void set_copyright(Date);
 
-	// cambiano lo stato di is_available se ha senso
+	// cambiano lo stato di is_available se è ragionevole
 	void borrow_book(); 	// throws ImpossibleToBorrowUnvailableBook
 	void return_book();		// throws ImpossibleToReturnAvailableBook
-		
-// Ghidoni in Rational non mette il distruttore
-//	~Book();
+
 private:
-	
+
 	class Isbn
 	{
 	public:
-		
-		Isbn(std::string code); // throws Invalid ISBN code
-		
+		// costruttore
+		Isbn(std::string code);		// throws Invalid ISBN code
 		static bool is_valid_isbn(std::string code);
-		
-		// variabile membro
 		std::string isbn_str;
-
-		// eccezione
 		struct InvalidIsbnException{};
 	};
 
-
-	// variabile
+	// variabili membro di Book
 	Isbn isbn_code;
 	std::string title;
 	std::string auth_name;
 	std::string auth_surname;
 	Date copyright_date;
 	bool availability;
-	
+
 	// eccezioni
 	struct ImpossibleToBorrowUnvailableBook{};
 	struct ImpossibleToReturnAvailableBook{};
-	
+
 	// variabili statiche
 	static std::string default_string;
 	static Date default_date;
 };
 
-// dichiarazioni ***OVERLOADING OPERATORI***
+// overloading operatori
 bool operator==(Book b, Book c);
 bool operator!=(Book b, Book c);
 std::ostream& operator<<(std::ostream& os, Book b);
