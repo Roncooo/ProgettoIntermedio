@@ -6,15 +6,15 @@
 ProjectName            :=Progetto
 ConfigurationName      :=Debug
 WorkspaceConfiguration :=Debug
-WorkspacePath          :=C:/Users/Beatrice/OneDrive/Desktop/ProgettoIntermedio/ProgettoIntermedio/ProgettoIntermedio
-ProjectPath            :=C:/Users/Beatrice/OneDrive/Desktop/ProgettoIntermedio/ProgettoIntermedio/ProgettoIntermedio/Progetto
+WorkspacePath          :="C:/Users/Beatrice/OneDrive/Desktop/Progetto Intermedio 2.0/ProgettoIntermedio"
+ProjectPath            :="C:/Users/Beatrice/OneDrive/Desktop/Progetto Intermedio 2.0/ProgettoIntermedio/Progetto"
 IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/Progetto
 OutDir                 :=$(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Beatrice
-Date                   :=19/11/2022
+Date                   :=20/11/2022
 CodeLitePath           :="C:/Program Files/CodeLite"
 MakeDirCommand         :=mkdir
 LinkerName             :="C:/Program Files/mingw64/bin/g++.exe"
@@ -29,7 +29,7 @@ OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-OutputDirectory        :=C:/Users/Beatrice/OneDrive/Desktop/ProgettoIntermedio/ProgettoIntermedio/ProgettoIntermedio/build-$(WorkspaceConfiguration)/bin
+OutputDirectory        :=C:/Users/Beatrice/OneDrive/Desktop/Progetto Intermedio 2.0/ProgettoIntermedio/build-$(WorkspaceConfiguration)/bin
 OutputFile             :=..\build-$(WorkspaceConfiguration)\bin\$(ProjectName).exe
 Preprocessors          :=
 ObjectSwitch           :=-o 
@@ -96,7 +96,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Beatrice/OneDrive/Desktop/ProgettoIntermedio/ProgettoIntermedio/ProgettoIntermedio/Progetto/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Beatrice/OneDrive/Desktop/Progetto Intermedio 2.0/ProgettoIntermedio/Progetto/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
 
@@ -104,7 +104,7 @@ $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 
 $(IntermediateDirectory)/Book.cpp$(ObjectSuffix): Book.cpp $(IntermediateDirectory)/Book.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Beatrice/OneDrive/Desktop/ProgettoIntermedio/ProgettoIntermedio/ProgettoIntermedio/Progetto/Book.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Book.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Beatrice/OneDrive/Desktop/Progetto Intermedio 2.0/ProgettoIntermedio/Progetto/Book.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Book.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Book.cpp$(DependSuffix): Book.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Book.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Book.cpp$(DependSuffix) -MM Book.cpp
 
@@ -112,7 +112,7 @@ $(IntermediateDirectory)/Book.cpp$(PreprocessSuffix): Book.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Book.cpp$(PreprocessSuffix) Book.cpp
 
 $(IntermediateDirectory)/Date.cpp$(ObjectSuffix): Date.cpp $(IntermediateDirectory)/Date.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Beatrice/OneDrive/Desktop/ProgettoIntermedio/ProgettoIntermedio/ProgettoIntermedio/Progetto/Date.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Date.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Beatrice/OneDrive/Desktop/Progetto Intermedio 2.0/ProgettoIntermedio/Progetto/Date.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Date.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Date.cpp$(DependSuffix): Date.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Date.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Date.cpp$(DependSuffix) -MM Date.cpp
 

@@ -14,8 +14,6 @@ Book::Book(
 	bool availability_status
     )
 	:
-		if(copyright.get_year()>this_year)
-			throw InvalidDateException();
 		isbn_code{Isbn(isbn)},
 		title{book_title},
 		auth_name{name},
@@ -23,7 +21,10 @@ Book::Book(
 		copyright_date{copyright},
 		availability{availability_status}
 	{ 
-		// constructor body, intentionally left blank
+		if(copyright.get_year()>this_year)
+		{
+			throw InvalidCopyrightDateException();
+		}
 	}
 
 //costruttore di copia
@@ -139,6 +140,7 @@ Book::Isbn::Isbn(std::string code)
 } 
 
 // valid format: nnn-nnn-nnn-x
+//la lunghezza dell'isbn è di 13
 bool Book::Isbn::is_valid_isbn(std::string s)
 {
 	char dlm = '-';
@@ -156,6 +158,7 @@ bool Book::Isbn::is_valid_isbn(std::string s)
 		return false;
 	
 	char last = s[12];
+	
 	// controllo la posizione del carattere nella tabella ascii
 	if	( 
 			!(isdigit(last)) 		&&	// last is not a number digit

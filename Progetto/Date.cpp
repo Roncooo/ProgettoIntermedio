@@ -55,7 +55,6 @@ bool Date::is_leap_year(int y)
 	// se un anno è divisibile per 4 è bisestile
 	if(y % 4 == 0)
 		return true;
-	
 	return false;
 }
 
@@ -67,7 +66,6 @@ bool Date::is_valid_date(int d, Month m, int y)
 		return false;
 	else if(d < 0 || d > 31)
 		return false;
-	
 	// controlli sui singoli mesi
 	if((is_leap_year(y)) && (m == feb))  
 	{
@@ -89,7 +87,7 @@ bool Date::is_valid_date(int d, Month m, int y)
 	return true;
 }
 
-// overloading operatori
+// definizioni overloading operatori
 bool operator<(Date first, Date second)
 {
     if(first.get_year() < second.get_year())

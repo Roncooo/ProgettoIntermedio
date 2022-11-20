@@ -41,7 +41,13 @@ public:
 	void set_auth_surname(std::string);
 	void set_title(std::string);
 	void set_copyright(Date);
-
+	
+	// eccezioni
+	struct ImpossibleToBorrowUnvailableBook{};
+	struct ImpossibleToReturnAvailableBook{};
+	struct InvalidIsbnException{};
+	struct InvalidCopyrightDateException{};
+	
 	// cambiano lo stato di is_available se è ragionevole
 	void borrow_book(); 	// throws ImpossibleToBorrowUnvailableBook
 	void return_book();		// throws ImpossibleToReturnAvailableBook
@@ -55,7 +61,6 @@ private:
 		Isbn(std::string code);		// throws Invalid ISBN code
 		static bool is_valid_isbn(std::string code);
 		std::string isbn_str;
-		struct InvalidIsbnException{};
 	};
 
 	// variabili membro di Book
@@ -65,10 +70,6 @@ private:
 	std::string auth_surname;
 	Date copyright_date;
 	bool availability;
-
-	// eccezioni
-	struct ImpossibleToBorrowUnvailableBook{};
-	struct ImpossibleToReturnAvailableBook{};
 
 	// variabili statiche
 	static std::string default_string;

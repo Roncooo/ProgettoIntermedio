@@ -27,11 +27,15 @@ public:
 	// assegnamento di copia
 	Date& operator=(const Date& d);
 	
+	//eccezione
+	struct InvalidDateException{};
+	
 	// getters
 	int get_day() const { return day; }
 	Month get_month() const { return mon; }
 	int get_year() const { return year; }
 	
+	//funzioni membro
 	static bool is_valid_date(int d, Date::Month m, int y);
 	static bool is_leap_year(int y);
 	
@@ -41,17 +45,15 @@ private:
 	int year;
 	Month mon;
 	
-	static constexpr int max_day_feb = 29; // il 29 febbraio mi servirà per il check sul mese febbraio
-	
-	struct InvalidDateException{};
+	// il 29 febbraio servirà per il check sul mese febbraio
+	static constexpr int max_day_feb = 29; 
 };
 
-// overloading operatori
+// dichiarazioni overloading operatori
 bool operator<(Date first, Date second);
 bool operator>(Date first, Date second);
 bool operator==(Date first, Date second);
 bool operator!=(Date first, Date second);
 std::ostream& operator<<(std::ostream& os, Date d);
-
 
 #endif // DATE_H
