@@ -8,90 +8,92 @@ int main(void)
 {
 	try
 	{
-		cout << "**INIZIO TEST DI DATE**\n";
-		cout << "Creo delle date:\n";
+		cout << "**INIZIO TEST DI DATE**" << endl;
+		cout << "Creo delle date:" << endl;
 		Date d1 = Date(20,12,1970);
 		Date d2 = Date(20,Date::Month::dec,2002);
 //		creando queste giustamente viene lanciata InvalidDateException
-//		Date prova1 = Date(29,Date::Month::feb,2005);	// invalida: non esiste il 29 febbraio
-//		Date prova2 = Date(31,Date::Month::apr,2005);	// invalida: non esiste il 31 aprile
-//		Date prova3 = Date(32,Date::Month::jan,2005);	// invalida: non esiste il 32 gennaio
-//		Date prova4 = Date(-5,Date::Month::jan,2005);	// invalida: non esiste il giorno -5
+//		Date invalid_date_1 = Date(29,Date::Month::feb,2005);	// invalida: non esiste il 29 febbraio
+//		Date invalid_date_2 = Date(31,Date::Month::apr,2005);	// invalida: non esiste il 31 aprile
+//		Date invalid_date_3 = Date(32,Date::Month::jan,2005);	// invalida: non esiste il 32 gennaio
+//		Date invalid_date_4 = Date(-5,Date::Month::jan,2005);	// invalida: non esiste il giorno -5
 		cout << "La data d1 e': "<< d1 << ", ok!\n";
 		cout << "La data d2 e': "<< d2 << ", ok!\n";
 		
 		cout << "\n**INIZIO TEST DI BOOK**\n";
-		cout << "Creo e stampo un libro\n";
+		
+		cout << "Creazione e stampa di tre libri\n";
+		Book my_favourite_book ("David", "Foster Wallace", "Una cosa divertente che non faro' mai piu'", "887-521-837-4");
+		cout << my_favourite_book  << "\n";
 		Book last_book_read = Book("Adam", "Douglas", "The Hitchhikker's Guide to the Galaxy");
 		cout << last_book_read << "\n";
+		Book book_im_reading = Book("Hannah", "Arendt", "La banalita' del male", "888-222-444-r", Date(6, 8, 1997), false);
+		cout << book_im_reading << "\n\n";
 		
 		// mettendo una data precedente al 1/1/52 giustamente lancia eccezione
-		Book book_im_reading = Book("Hannah", "Arendt", "La banalita' del male", "888-222-444-r", Date(6, 8, 1997), false);
-		cout << "Libro creato: " << book_im_reading << "\n" << endl;
+//		Book invalid_date_book = Book("Hannah", "Arendt", "La banalita' del male", "888-222-444-r", Date(6, 8, 1950), false);
 		
-		// ritorno book_im_reading
 		cout << "*** Processo di restituzione del libro ***\n";
 		book_im_reading.return_book();
-		cout << "Hai restituito: " << book_im_reading <<"\n" << endl;
-		cout << book_im_reading.get_title() << " di " << book_im_reading.get_auth_surname() <<" disponibile per il prestito\n" << endl;
+		cout << "Hai restituito: " << book_im_reading <<"\n";
+		if(book_im_reading.is_available())
+			cout << book_im_reading.get_title() << " di " << book_im_reading.get_auth_surname() << " disponibile per il prestito\n\n";
+		else
+			cout << "Errore: il libro è stato restituito e ora dovrebbe essere dispobile\n";
 		
-		//libro 2
-		cout << "Creo e stampo un altro libro" << endl;
-		Book bd_book = Book ("Matt", "Fraction", "Fear Itself", "882-871-134-6", Date(1,2,1953));
-		cout << bd_book << endl << endl;
-		
-		// creo e prendo in prestito un libro
-		Book book_i_want = Book("Stephen W.", "Hawking", "La teoria del tutto","978-881-707-3", Date(1, 1, 1998));
-		cout << "Libro creato: " << book_i_want << "\n" << endl;
 		cout << "*** Processo di presa in prestito del libro ***\n";
-		
+		Book book_i_want = Book("Stephen W.", "Hawking", "La teoria del tutto","978-881-707-3", Date(1, 1, 1998));
 		book_i_want.borrow_book();
-		cout << "Hai preso in prestito: " << book_i_want <<"\n" << endl;
+		if(book_i_want.is_available())
+			cout << "Errore: il libro è stato preso in prestito e non dovrebbe più essere disponibile";
+		else
+			cout << "Hai preso in prestito: " << book_i_want << "\n\n";
 		
-		// provo a confrontare i libri creati in precedenza
-		cout << "Il libro restituito e quello preso in prestito sono uguali?\n";
+		cout << "*** Confronto tra due libri *** (tra i loro codici isbn)\n";	// come da consegna
 		if(book_im_reading != book_i_want)
-			cout << "I due libri non sono uguali\n";
+			cout << "I due libri non sono uguali (" << book_im_reading.get_isbn() << "!=" << book_i_want.get_isbn() << ")\n";
 		else
 			cout << "I due libri sono uguali\n";
 		
 		// creo un altro libro con ISBN di default e confronto con il primo creato
-		Book book_prova = Book();
-		cout << "Il libro di prova: " << book_prova <<"\n";
-		cout << "Il libro di prova e " << last_book_read.get_title() << " sono uguali?\n";
-		if(book_prova == last_book_read)
-			cout << "I due libri sono uguali\n" << endl;
+		Book default_book = Book();
+		cout << "Libro di default: " << default_book <<"\n";
+		cout << "Il libro di default e " << last_book_read.get_title();
+		if(default_book == last_book_read)
+			cout << " sono uguali (" << default_book.get_isbn() << "==" << last_book_read.get_isbn() << ")\n\n";
 		else
-			cout << "I due libri non sono uguali\n" << endl;
+			cout << " non sono uguali\n\n";
 		
-		//	dati
-		string title = "Una cosa divertente che non faro' mai piu'";
-		string name = "David";
-		string surname = "Foster Wallace";
-		string isbn = "887-521-837-4";
-		
-		//	COSTRUZIONE DI BOOK, prerequisito del progetto
-		Book my_favourite_book (name, surname, title, isbn);
-		std::cout << my_favourite_book  << "\n" << std::endl;
-		
-		//provo i setters
-		cout << "Modifico il libro che sto leggendo \t" << book_im_reading.get_title() << endl;
+		cout << "*** Test dei setters ***\n";
+		cout << "Modifico manualmente i campi del libro: \"" << book_im_reading.get_title() << "\"\n";
 		book_im_reading.set_title("Discrete Calculus");
 		book_im_reading.set_auth_name("Carlo");
 		book_im_reading.set_auth_surname("Mariconda");
 		book_im_reading.set_isbn("123-456-789-m");
 		book_im_reading.set_copyright(Date(5, 7, 2000));
-		cout << "Adesso il libro che sto leggendo e' " << endl;
-		cout << book_im_reading << endl;
-		cout << endl;
+		cout << "Adesso il libro che sto leggendo e': ";
+		cout << book_im_reading << "\n\n";
 		
-		//creo un vettore di book
+		// creo un vettore di book
+		cout << "*** Dichiarazione e stampa di un vector<Book> *** \n";
+		cout << "\tserve a testare i costruttori di default\n";
 		vector<Book> shelf(10);
-		cout << "Vector di Book creato\n";
-		//controllo
 		for (int i = 0; i < shelf.size(); i++)
-			cout << shelf[i] << endl;
-			
+			cout << "v[" << i << "] = " << shelf[i] << "\n";
+		
+		cout << "\n*** Assegnamento di copia ***\n";
+		Book copy_book("Nome", "Cognome", "Titolo", "123-123-123-a", Date(25,9,1989), false);
+		my_favourite_book = copy_book;
+		cout << "Il libro sovrascritto e' ora: " << my_favourite_book << "\n";
+		copy_book.set_isbn("987-654-231-x");
+		cout << (copy_book == my_favourite_book ? "E' stata fatta una shallow copy" : "E' stata fatta una deep copy\n\n");
+		
+		cout << "*** Costruttore di copia ***\n";
+		Book constr_book = copy_book;
+		cout << "Il libro costruito per copia e': " << constr_book << "\n";
+		copy_book.set_isbn("000-000-000-x");
+		cout << (copy_book == constr_book ? "E' stata fatta una shallow copy\n" : "E' stata fatta una deep copy\n");
+		
 	}
 	catch(Date::InvalidDateException e) { cerr << "***ERRORE***: hai creato una data invalida!\n"; }
 	catch(Book::InvalidCopyrightDateException e) { cerr << "***ERRORE***: hai creato una data invalida per il copyright!\n"; }
