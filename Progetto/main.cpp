@@ -8,19 +8,7 @@ int main(void)
 {
 	try
 	{
-		cout << "**INIZIO TEST DI DATE**" << endl;
-		cout << "Creo delle date:" << endl;
-		Date d1 = Date(20,12,1970);
-		Date d2 = Date(20,Date::Month::dec,2002);
-//		creando queste giustamente viene lanciata InvalidDateException
-//		Date invalid_date_1 = Date(29,Date::Month::feb,2005);	// invalida: non esiste il 29 febbraio
-//		Date invalid_date_2 = Date(31,Date::Month::apr,2005);	// invalida: non esiste il 31 aprile
-//		Date invalid_date_3 = Date(32,Date::Month::jan,2005);	// invalida: non esiste il 32 gennaio
-//		Date invalid_date_4 = Date(-5,Date::Month::jan,2005);	// invalida: non esiste il giorno -5
-		cout << "La data d1 e': "<< d1 << ", ok!\n";
-		cout << "La data d2 e': "<< d2 << ", ok!\n";
-		
-		cout << "\n**INIZIO TEST DI BOOK**\n";
+		cout << "***** INIZIO TEST DI BOOK *****\n";
 		
 		cout << "Creazione e stampa di tre libri\n";
 		Book my_favourite_book ("David", "Foster Wallace", "Una cosa divertente che non faro' mai piu'", "887-521-837-4");
@@ -81,18 +69,34 @@ int main(void)
 		for (int i = 0; i < shelf.size(); i++)
 			cout << "v[" << i << "] = " << shelf[i] << "\n";
 		
-		cout << "\n*** Assegnamento di copia ***\n";
+		cout << "\n*** Assegnamento di copia per Book***\n";
 		Book copy_book("Nome", "Cognome", "Titolo", "123-123-123-a", Date(25,9,1989), false);
 		my_favourite_book = copy_book;
 		cout << "Il libro sovrascritto e' ora: " << my_favourite_book << "\n";
 		copy_book.set_isbn("987-654-231-x");
 		cout << (copy_book == my_favourite_book ? "E' stata fatta una shallow copy" : "E' stata fatta una deep copy\n\n");
 		
-		cout << "*** Costruttore di copia ***\n";
+		cout << "*** Costruttore di copia per Book ***\n";
 		Book constr_book = copy_book;
 		cout << "Il libro costruito per copia e': " << constr_book << "\n";
 		copy_book.set_isbn("000-000-000-x");
-		cout << (copy_book == constr_book ? "E' stata fatta una shallow copy\n" : "E' stata fatta una deep copy\n");
+		cout << (copy_book == constr_book ? "E' stata fatta una shallow copy" : "E' stata fatta una deep copy\n");
+		
+		
+		cout << "\n\n***** INIZIO TEST DI DATE *****\n";
+		cout << "Creo delle date:";
+		Date d1 = Date(20,12,1970);
+		Date d2 = Date(20,Date::Month::dec,2002);
+		// creando queste giustamente viene lanciata InvalidDateException
+//		Date invalid_date_1 = Date(29,Date::Month::feb,2005);	// invalida: non esiste il 29 febbraio
+//		Date invalid_date_2 = Date(31,Date::Month::apr,2005);	// invalida: non esiste il 31 aprile
+//		Date invalid_date_3 = Date(32,Date::Month::jan,2005);	// invalida: non esiste il 32 gennaio
+//		Date invalid_date_4 = Date(-5,Date::Month::jan,2005);	// invalida: non esiste il giorno -5
+		cout << "La data d1 e': "<< d1 << ", ok!\n";
+		cout << "La data d2 e': "<< d2 << ", ok!\n";
+		cout << (d1<d2 ? "d1 viene prima di d2\n" : "d1 viene dopo d2");
+		cout << (Date::is_valid_date(29,2,2005) ? "Il 29/2/2005 esiste" : "Il 29/2/2005 non esiste\n");
+		cout << (Date::is_leap_year(2004) ? "Il 2004 e' bisestile\n" : "Il 2004 non è bisestile");
 		
 	}
 	catch(Date::InvalidDateException e) { cerr << "***ERRORE***: hai creato una data invalida!\n"; }

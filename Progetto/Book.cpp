@@ -1,10 +1,9 @@
 #include "Book.h"
 
 std::string Book::default_string = "Not_specified";
-// scelta come data di riferimento per Book perché il copyright scade dopo 70 anni
-Date Book::default_date = Date(1,1,1952);
+Date Book::default_date = Date(1,1,1952);	// scelta come data di riferimento perché il copyright scade dopo 70 anni
 
-
+// costruttore
 Book::Book(
     std::string name,
 	std::string surname, 
@@ -27,70 +26,6 @@ Book::Book(
 		}
 	}
 
-//costruttore di copia
-//Book::Book(const Book& b)
-//	:
-//		isbn_code {b.isbn_code},
-//		title {b.title},
-//		auth_name {b.auth_name},
-//		auth_surname {b.auth_surname},
-//		copyright_date {b.copyright_date},
-//		availability {b.availability}
-//	{
-//		// constructor body, intentionally left blank
-//	}
-
-//costruttore di spostamento
-//Book::Book(Book&& b)
-//	:
-//		isbn_code {b.isbn_code},
-//		title {b.title},
-//		auth_name {b.auth_name},
-//		auth_surname {b.auth_surname},
-//		copyright_date {b.copyright_date},
-//		availability {b.availability}
-//	{
-//		b.isbn_code = Isbn("000-000-000-x");
-//		b.title = default_string;
-//		b.auth_name = default_string;
-//		b.auth_surname = default_string;
-//		b.copyright_date = default_date;	// assegnamento di copia di date 
-//		b.availability = true;
-//	}
-
-
-//assegnamento di copia
-//Book& Book::operator= (const Book& b)
-//{
-//	isbn_code = b.isbn_code;
-//	title = b.title;
-//	auth_name = b.auth_name;
-//	auth_surname = b.auth_surname;
-//	copyright_date = b.copyright_date;	// assegnamento di copia di date
-//	availability = b.availability;
-//	return *this;
-//}
-
-//assegnamento di spostamento
-//Book& Book::operator= (Book&& b)
-//{
-//	isbn_code = b.isbn_code;
-//	title = b.title;
-//	auth_name = b.auth_name;
-//	auth_surname = b.auth_surname;
-//	copyright_date = b.copyright_date;	// assegnamento di copia di date 
-//	availability = b.availability;
-//	
-//	b.isbn_code = Isbn("000-000-000-x");
-//	b.title = default_string;
-//	b.auth_name = default_string;
-//	b.auth_surname = default_string;
-//	b.copyright_date = default_date;	// assegnamento di copia di date 
-//	b.availability = true;
-//	
-//	return *this;
-//}
-
 
 // getters
 std::string Book::get_isbn() { return isbn_code.isbn_str; }
@@ -105,10 +40,10 @@ void Book::set_isbn(std::string s) { isbn_code = Isbn(s); }
 void Book::set_auth_name(std::string s) { auth_name = s; }
 void Book::set_auth_surname(std::string s) { auth_surname = s; }
 void Book::set_title(std::string s) { title = s; }
-void Book::set_copyright(Date d)	// throws InvalidDateException
+void Book::set_copyright(Date d)	// throws InvalidCopyrightDateException
 { 
-	if(d.get_year()>this_year)
-		throw Date::InvalidDateException();
+	if((d.get_year() > this_year) || (d < default_date))
+		throw InvalidCopyrightDateException();
 	copyright_date = d; 
 }
 
@@ -140,25 +75,19 @@ Book::Isbn::Isbn(std::string code)
 } 
 
 // valid format: nnn-nnn-nnn-x
-//la lunghezza dell'isbn è di 13
 bool Book::Isbn::is_valid_isbn(std::string s)
 {
 	char dlm = '-';
-	
 	if(s.length()!=13)
 		return false;
-	
 	for(int i=0; i<3; i++)
 	{
-		if( (!isdigit(s[i])) || (!isdigit(s[i+4])) || (!isdigit(s[i+8])) )
+		if((!isdigit(s[i])) || (!isdigit(s[i+4])) || (!isdigit(s[i+8])))
 			return false;
 	}
-	
-	if( s[3]!=dlm || s[3+4]!=dlm || s[3+8]!=dlm )
+	if(s[3]!=dlm || s[3+4]!=dlm || s[3+8]!=dlm)
 		return false;
-	
 	char last = s[12];
-	
 	// controllo la posizione del carattere nella tabella ascii
 	if	( 
 			!(isdigit(last)) 		&&	// last is not a number digit

@@ -20,33 +20,6 @@ Date::Date(int d, int m, int y)
 	year = y;
 }
 
-// costruttore di spostamento
-//Date::Date(Date&& d)
-//{
-//	// DA FARE ?
-//}
-
-//assegnamento di spostamento
-//Date& Date::operator=(Date&& d)
-//{
-//	 DA FARE ?
-//}
-//
-// costruttore di copia necessario a causa di Month che non è built-in
-//Date::Date(const Date& d) 
-//	:day{d.day}, mon{d.mon}, year{d.year}
-//{
-//	 constructor body, intentionally left blank
-//}
-
-//assegnamento di copia necessario a causa di Month che non è built-in
-//Date& Date::operator=(const Date& d)
-//{
-//	this->day = d.day;
-//	this->mon = d.mon;
-//	this->year = d.year; 
-//}
-
 bool Date::is_leap_year(int y)
 {
 	// se un anno è divisibile per 100 ma non per 400, non è bisestile
@@ -56,6 +29,11 @@ bool Date::is_leap_year(int y)
 	if(y % 4 == 0)
 		return true;
 	return false;
+}
+
+bool Date::is_valid_date(int d, int m, int y)
+{
+	return is_valid_date(d,Month(m),y);
 }
 
 bool Date::is_valid_date(int d, Month m, int y)
