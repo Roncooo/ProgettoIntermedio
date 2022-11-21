@@ -28,68 +28,68 @@ Book::Book(
 	}
 
 //costruttore di copia
-Book::Book(const Book& b)
-	:
-		isbn_code {b.isbn_code},
-		title {b.title},
-		auth_name {b.auth_name},
-		auth_surname {b.auth_surname},
-		copyright_date {b.copyright_date},
-		availability {b.availability}
-	{
-		// constructor body, intentionally left blank
-	}
+//Book::Book(const Book& b)
+//	:
+//		isbn_code {b.isbn_code},
+//		title {b.title},
+//		auth_name {b.auth_name},
+//		auth_surname {b.auth_surname},
+//		copyright_date {b.copyright_date},
+//		availability {b.availability}
+//	{
+//		// constructor body, intentionally left blank
+//	}
 
 //costruttore di spostamento
-Book::Book(Book&& b)
-	:
-		isbn_code {b.isbn_code},
-		title {b.title},
-		auth_name {b.auth_name},
-		auth_surname {b.auth_surname},
-		copyright_date {b.copyright_date},
-		availability {b.availability}
-	{
-		b.isbn_code = Isbn("000-000-000-x");
-		b.title = default_string;
-		b.auth_name = default_string;
-		b.auth_surname = default_string;
-		b.copyright_date = default_date;	// assegnamento di copia di date 
-		b.availability = true;
-	}
+//Book::Book(Book&& b)
+//	:
+//		isbn_code {b.isbn_code},
+//		title {b.title},
+//		auth_name {b.auth_name},
+//		auth_surname {b.auth_surname},
+//		copyright_date {b.copyright_date},
+//		availability {b.availability}
+//	{
+//		b.isbn_code = Isbn("000-000-000-x");
+//		b.title = default_string;
+//		b.auth_name = default_string;
+//		b.auth_surname = default_string;
+//		b.copyright_date = default_date;	// assegnamento di copia di date 
+//		b.availability = true;
+//	}
 
 
 //assegnamento di copia
-Book& Book::operator= (const Book& b)
-{
-	isbn_code = b.isbn_code;
-	title = b.title;
-	auth_name = b.auth_name;
-	auth_surname = b.auth_surname;
-	copyright_date = b.copyright_date;	// assegnamento di copia di date
-	availability = b.availability;
-	return *this;
-}
+//Book& Book::operator= (const Book& b)
+//{
+//	isbn_code = b.isbn_code;
+//	title = b.title;
+//	auth_name = b.auth_name;
+//	auth_surname = b.auth_surname;
+//	copyright_date = b.copyright_date;	// assegnamento di copia di date
+//	availability = b.availability;
+//	return *this;
+//}
 
 //assegnamento di spostamento
-Book& Book::operator= (Book&& b)
-{
-	isbn_code = b.isbn_code;
-	title = b.title;
-	auth_name = b.auth_name;
-	auth_surname = b.auth_surname;
-	copyright_date = b.copyright_date;	// assegnamento di copia di date 
-	availability = b.availability;
-	
-	b.isbn_code = Isbn("000-000-000-x");
-	b.title = default_string;
-	b.auth_name = default_string;
-	b.auth_surname = default_string;
-	b.copyright_date = default_date;	// assegnamento di copia di date 
-	b.availability = true;
-	
-	return *this;
-}
+//Book& Book::operator= (Book&& b)
+//{
+//	isbn_code = b.isbn_code;
+//	title = b.title;
+//	auth_name = b.auth_name;
+//	auth_surname = b.auth_surname;
+//	copyright_date = b.copyright_date;	// assegnamento di copia di date 
+//	availability = b.availability;
+//	
+//	b.isbn_code = Isbn("000-000-000-x");
+//	b.title = default_string;
+//	b.auth_name = default_string;
+//	b.auth_surname = default_string;
+//	b.copyright_date = default_date;	// assegnamento di copia di date 
+//	b.availability = true;
+//	
+//	return *this;
+//}
 
 
 // getters

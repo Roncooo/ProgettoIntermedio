@@ -21,31 +21,31 @@ Date::Date(int d, int m, int y)
 }
 
 // costruttore di spostamento
-Date::Date(Date&& d)
-{
-	// DA FARE ?
-}
+//Date::Date(Date&& d)
+//{
+//	// DA FARE ?
+//}
 
 //assegnamento di spostamento
-Date& Date::operator=(Date&& d)
-{
-	// DA FARE ?
-}
-
+//Date& Date::operator=(Date&& d)
+//{
+//	 DA FARE ?
+//}
+//
 // costruttore di copia necessario a causa di Month che non è built-in
-Date::Date(const Date& d) 
-	:day{d.day}, mon{d.mon}, year{d.year}
-{
-	// constructor body, intentionally left blank
-}
+//Date::Date(const Date& d) 
+//	:day{d.day}, mon{d.mon}, year{d.year}
+//{
+//	 constructor body, intentionally left blank
+//}
 
 //assegnamento di copia necessario a causa di Month che non è built-in
-Date& Date::operator=(const Date& d)
-{
-	this->day = d.day;
-	this->mon = d.mon;
-	this->year = d.year; 
-}
+//Date& Date::operator=(const Date& d)
+//{
+//	this->day = d.day;
+//	this->mon = d.mon;
+//	this->year = d.year; 
+//}
 
 bool Date::is_leap_year(int y)
 {

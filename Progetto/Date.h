@@ -19,13 +19,13 @@ public:
 	Date(int d, int m, int y);
 	
 	// costruttore di spostamento
-	Date(Date&& d);
+//	Date(Date&& d);
 	// assegnamento di spostamento
-	Date& operator=(Date&& d);
+//	Date& operator=(Date&& d);
 	// costruttore di copia
-	Date(const Date&);
+//	Date(const Date&);
 	// assegnamento di copia
-	Date& operator=(const Date& d);
+//	Date& operator=(const Date& d);
 	
 	//eccezione
 	struct InvalidDateException{};
