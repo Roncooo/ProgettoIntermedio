@@ -74,6 +74,17 @@ int main(void)
 		Book my_favourite_book (name, surname, title, isbn);
 		std::cout << my_favourite_book  << "\n" << std::endl;
 		
+		//provo i setters
+		cout << "Modifico il libro che sto leggendo \t" << book_im_reading.get_title() << endl;
+		book_im_reading.set_title("Discrete Calculus");
+		book_im_reading.set_auth_name("Carlo");
+		book_im_reading.set_auth_surname("Mariconda");
+		book_im_reading.set_isbn("123-456-789-m");
+		book_im_reading.set_copyright(Date(5, 7, 2000));
+		cout << "Adesso il libro che sto leggendo e' " << endl;
+		cout << book_im_reading << endl;
+		cout << endl;
+		
 		//creo un vettore di book
 		vector<Book> shelf(10);
 		cout << "Vector di Book creato\n";

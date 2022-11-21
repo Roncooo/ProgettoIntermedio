@@ -33,8 +33,8 @@
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\fulvi\OneDrive\Desktop\codelite\GitHub\Progetto\main.cpp" Name="FileName"/>
-      <int Value="27" Name="FirstVisibleLine"/>
-      <int Value="40" Name="CurrentLine"/>
+      <int Value="24" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
