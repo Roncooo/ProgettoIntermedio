@@ -14,9 +14,9 @@ int main(void)
 		
 		cout << "Creazione e stampa di tre libri:\n";
 		Book my_favourite_book ("David", "Foster Wallace", "Una cosa divertente che non faro' mai piu'", "887-521-837-4");
-		cout << my_favourite_book  << "\n";
+		cout << my_favourite_book  << "\n\n";
 		Book last_book_read = Book("Adam", "Douglas", "The Hitchhikker's Guide to the Galaxy");
-		cout << last_book_read << "\n";
+		cout << last_book_read << "\n\n";
 		Book book_im_reading = Book("Hannah", "Arendt", "La banalita' del male", "888-222-444-r", Date(6, 8, 1997), false);
 		cout << book_im_reading << "\n\n";
 		
@@ -25,7 +25,7 @@ int main(void)
 		
 		cout << "*** Processo di restituzione del libro ***\n";
 		book_im_reading.return_book();
-		cout << "Hai restituito: " << book_im_reading <<"\n";
+		cout << "Hai restituito: \n" << book_im_reading <<"\n";
 		if(book_im_reading.is_available())
 			cout << book_im_reading.get_title() << " di " << book_im_reading.get_auth_surname() << " disponibile per il prestito\n\n";
 		else
@@ -37,7 +37,7 @@ int main(void)
 		if(book_i_want.is_available())
 			cout << "Errore: il libro è stato preso in prestito e non dovrebbe più essere disponibile";
 		else
-			cout << "Hai preso in prestito: " << book_i_want << "\n\n";
+			cout << "Hai preso in prestito: \n" << book_i_want << "\n\n";
 		
 		cout << "*** Confronto i due libri sulla base del codice ISBN *** \n";	// come da consegna
 		if(book_im_reading != book_i_want)
@@ -47,7 +47,7 @@ int main(void)
 		
 		// creo un altro libro con ISBN di default e confronto con il primo creato
 		Book default_book = Book();
-		cout << "Libro di default: " << default_book <<"\n";
+		cout << "Libro di default: \n" << default_book <<"\n";
 		cout << "Il libro di default e " << last_book_read.get_title();
 		if(default_book == last_book_read)
 			cout << " sono uguali (" << default_book.get_isbn() << " == " << last_book_read.get_isbn() << ")\n\n";
@@ -61,26 +61,24 @@ int main(void)
 		default_book.set_auth_surname("Gosling");
 		default_book.set_isbn("013-326-022-4");
 		default_book.set_copyright(Date(28, 2, 2013));
-		cout << "Adesso il libro che sto leggendo e': ";
-		cout << default_book << "\n\n";
+		cout << "Adesso il libro che sto leggendo e': \n" << default_book << "\n\n";
 		
 		// creo un vettore di book
-		cout << "*** Dichiarazione e stampa di un vector<Book> *** \n";
+		cout << "*** Dichiarazione di un vector<Book> e stampa del primo elemento *** \n";
 		cout << "\tserve a testare i costruttori di default\n";
 		vector<Book> shelf(10);
-		for (int i = 0; i < shelf.size(); i++)
-			cout << "v[" << i << "] = " << shelf[i] << "\n";
+		cout << "v[" << 0 << "] = \n" << shelf[0] << "\n";
 		
-		cout << "\n*** Assegnamento di copia per Book***\n";
+		cout << "\n*** Assegnamento di copia per Book ***\n";
 		Book copy_book("Nome", "Cognome", "Titolo", "123-123-123-a", Date(25,9,1989), false);
 		my_favourite_book = copy_book;
-		cout << "Il libro sovrascritto e' ora: " << my_favourite_book << "\n";
+		cout << "Il libro sovrascritto e' ora: \n" << my_favourite_book << "\n";
 		copy_book.set_isbn("987-654-231-x");
 		cout << (copy_book == my_favourite_book ? "E' stata fatta una shallow copy" : "E' stata fatta una deep copy\n\n");
 		
 		cout << "*** Costruttore di copia per Book ***\n";
 		Book constr_book = copy_book;
-		cout << "Il libro costruito per copia e': " << constr_book << "\n";
+		cout << "Il libro costruito per copia e': \n" << constr_book << "\n";
 		copy_book.set_isbn("000-000-000-x");
 		cout << (copy_book == constr_book ? "E' stata fatta una shallow copy" : "E' stata fatta una deep copy\n");
 		
