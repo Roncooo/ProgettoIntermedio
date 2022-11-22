@@ -1,3 +1,5 @@
+// Bellesso Beatrice, Bruzzese Fuvio, Roncolato Francesco
+
 #include <iostream>
 #include <vector>
 #include "Book.h"
@@ -10,7 +12,7 @@ int main(void)
 	{
 		cout << "***** INIZIO TEST DI BOOK *****\n";
 		
-		cout << "Creazione e stampa di tre libri\n";
+		cout << "Creazione e stampa di tre libri:\n";
 		Book my_favourite_book ("David", "Foster Wallace", "Una cosa divertente che non faro' mai piu'", "887-521-837-4");
 		cout << my_favourite_book  << "\n";
 		Book last_book_read = Book("Adam", "Douglas", "The Hitchhikker's Guide to the Galaxy");
@@ -37,7 +39,7 @@ int main(void)
 		else
 			cout << "Hai preso in prestito: " << book_i_want << "\n\n";
 		
-		cout << "*** Confronto tra due libri *** (tra i loro codici isbn)\n";	// come da consegna
+		cout << "*** Confronto i due libri sulla base del codice ISBN *** \n";	// come da consegna
 		if(book_im_reading != book_i_want)
 			cout << "I due libri non sono uguali (" << book_im_reading.get_isbn() << "!=" << book_i_want.get_isbn() << ")\n";
 		else
@@ -48,19 +50,19 @@ int main(void)
 		cout << "Libro di default: " << default_book <<"\n";
 		cout << "Il libro di default e " << last_book_read.get_title();
 		if(default_book == last_book_read)
-			cout << " sono uguali (" << default_book.get_isbn() << "==" << last_book_read.get_isbn() << ")\n\n";
+			cout << " sono uguali (" << default_book.get_isbn() << " == " << last_book_read.get_isbn() << ")\n\n";
 		else
 			cout << " non sono uguali\n\n";
 		
 		cout << "*** Test dei setters ***\n";
-		cout << "Modifico manualmente i campi del libro: \"" << book_im_reading.get_title() << "\"\n";
-		book_im_reading.set_title("Discrete Calculus");
-		book_im_reading.set_auth_name("Carlo");
-		book_im_reading.set_auth_surname("Mariconda");
-		book_im_reading.set_isbn("123-456-789-m");
-		book_im_reading.set_copyright(Date(5, 7, 2000));
+		cout << "Modifico manualmente i campi del libro di default\n";
+		default_book.set_title("The Java Language Specification");
+		default_book.set_auth_name("James");
+		default_book.set_auth_surname("Gosling");
+		default_book.set_isbn("013-326-022-4");
+		default_book.set_copyright(Date(28, 2, 2013));
 		cout << "Adesso il libro che sto leggendo e': ";
-		cout << book_im_reading << "\n\n";
+		cout << default_book << "\n\n";
 		
 		// creo un vettore di book
 		cout << "*** Dichiarazione e stampa di un vector<Book> *** \n";
@@ -84,7 +86,7 @@ int main(void)
 		
 		
 		cout << "\n\n***** INIZIO TEST DI DATE *****\n";
-		cout << "Creo delle date:";
+		cout << "Creo delle date:\n";
 		Date d1 = Date(20,12,1970);
 		Date d2 = Date(20,Date::Month::dec,2002);
 		// creando queste giustamente viene lanciata InvalidDateException

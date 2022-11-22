@@ -1,3 +1,5 @@
+// Bellesso Beatrice, Bruzzese Fuvio, Roncolato Francesco
+
 #include "Book.h"
 
 std::string Book::default_string = "Not_specified";

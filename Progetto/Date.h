@@ -1,3 +1,5 @@
+// Bellesso Beatrice, Bruzzese Fuvio, Roncolato Francesco
+
 #ifndef DATE_H
 #define DATE_H
 
@@ -47,7 +49,7 @@ private:
 	int year;
 	Month mon;
 	
-	// servire per il check sul mese febbraio
+	// servira' per il check sul mese febbraio
 	static constexpr int max_day_feb = 29; 
 };
 

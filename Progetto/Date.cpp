@@ -1,3 +1,5 @@
+// Bellesso Beatrice, Bruzzese Fuvio, Roncolato Francesco
+
 #include "Date.h"
 
 Date::Date(int d, Month m, int y)	// non ha senso l'initializer list perché bisogna prima controllare i dati
